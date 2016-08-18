@@ -101,8 +101,9 @@ main {
 /*----------Footer----------*/
 .footer {
     width: 100%;
-    background: #252525;  
-    height: 40%;
+    background: #252525; 
+    color: #fff;
+    height: 55%;
 }
 
 .footer .opening-time {
@@ -115,4 +116,16 @@ main {
     border: 1px solid white;
     border-collapse: collapse;
     margin-bottom: 0;
+}
+
+#opening-time {
+    font-size: 12px;
+    border: 1px solid #fff;
+    margin: 10px;
+    width: 200px;
+
+}
+
+#opening-time dl {
+    margin: 5px;
 }
