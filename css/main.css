@@ -1,0 +1,89 @@
+/*----------Globals----------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*----------Headings----------*/
+h2 {
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+/*----------Header----------*/
+.navbar-default,
+.jumbotron-fluid {
+    margin-bottom: 0 !important;
+}
+
+/*----------Navbar----------*/
+
+
+/*----------Jumbotron----------*/
+.jumbotron-fluid {
+            background-image: url("../images/1-7.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 550px;
+        }
+
+/*----------About----------*/
+#about {
+    background: #136eb4;
+    color: #fff;
+    height: 300px;
+    line-height: 50px;
+}
+
+/*----------Gallery----------*/
+#gallery {
+    height: 550px;
+    color: #136eb4;
+}
+
+/*----------Services----------*/
+#services,
+#services .list-group-item {
+    background: #136eb4;
+}
+
+#services {
+    color: #fff;
+    height: 300px;
+}
+
+#services .list-group-item {
+    text-align: center;
+}
+
+/*----------Collaborators----------*/
+#collaborators {
+    height: 550px;
+    color: #136eb4;
+}
+
+#collaborators .caption {
+    text-align: center;
+}
+
+/*----------Footer----------*/
+.footer {
+    height: 300px;
+    background: #252525;    
+}
+
+.footer .opening-time {
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 12px;
+}
+
+.footer .opening-time dl {
+    border: 1px solid white;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
