@@ -3,6 +3,13 @@ html, body, .container-fluid {
     height:100%;
 }
 
+main section:nth-child(even){
+    height: 70%;
+}
+
+main section:nth-child(odd){
+    height: 30%;
+}
 
 /*----------Headings----------*/
 h2 {
@@ -25,7 +32,7 @@ body > header {
 
 /*----------Main----------*/
 main {
-    height: 70%;
+    /*height: 70%;*/
 }
 
 /*----------Navbar----------*/
@@ -34,10 +41,9 @@ main {
     background: #136eb4;
 }
 
-
-#main-navigation a {
-    color: #fff !important;
-}
+    #main-navigation a {
+        color: #fff !important;
+    }
 
 /*----------Jumbotron----------*/
 .jumbotron-fluid {
@@ -52,7 +58,7 @@ main {
 #about {
     background: #136eb4;
     color: #fff;
-    height: 55%;
+    /*height: 55%;*/
     line-height: 50px;
 }
 
@@ -61,10 +67,10 @@ main {
     color: #136eb4;
 }
 
-#gallery img {
-    width: 90%;
-    height: 60%;
-}
+    #gallery img {
+        width: 90%;
+        /*height: 60%;*/
+    }
 
 /*----------Services----------*/
 #services,
@@ -74,7 +80,7 @@ main {
 
 #services {
     color: #fff;
-    height: 55%;
+    /*height: 70%;*/
 }
 
 #services .list-group-item {
@@ -83,7 +89,7 @@ main {
 
 /*----------Collaborators----------*/
 #collaborators {
-    height: 550px;
+    /*height: 550px;*/
     color: #136eb4;
 }
 
@@ -95,15 +101,18 @@ main {
 #contacts {
     background: #136eb4;
     color: #fff;
-    height: 55%;
+    /*height: 55%;*/
 }
+    #contacts input {
+        width: 50%;
+    }
 
 /*----------Footer----------*/
 .footer {
     width: 100%;
     background: #252525; 
     color: #fff;
-    height: 55%;
+    /*height: 55%;*/
 }
 
 .footer .opening-time {
