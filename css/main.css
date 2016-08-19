@@ -5,10 +5,15 @@ html, body, .container-fluid {
 
 main section:nth-child(even){
     height: 70%;
+    background: #fff !important;
+    color: #136eb4 !important;
 }
 
 main section:nth-child(odd){
+    padding: 20px;
     height: 30%;
+    background: #136eb4 !important;
+    color: #fff !important;
 }
 
 /*----------Headings----------*/
@@ -25,14 +30,10 @@ h4 {
 body > header {
     height: 90%;
 }
+
 .navbar-default,
 .jumbotron-fluid {
     margin-bottom: 0 !important;
-}
-
-/*----------Main----------*/
-main {
-    /*height: 70%;*/
 }
 
 /*----------Navbar----------*/
@@ -56,85 +57,59 @@ main {
 
 /*----------About----------*/
 #about {
-    background: #136eb4;
-    color: #fff;
-    /*height: 55%;*/
     line-height: 50px;
 }
 
 /*----------Gallery----------*/
-#gallery {
-    color: #136eb4;
+#gallery img {
+    max-height: 300px;
+    max-width: 100%;
 }
-
-    #gallery img {
-        width: 90%;
-        /*height: 60%;*/
-    }
 
 /*----------Services----------*/
-#services,
-#services .list-group-item {
-    background: #136eb4;
-}
-
 #services {
     color: #fff;
-    /*height: 70%;*/
 }
 
-#services .list-group-item {
-    text-align: center;
-}
+    #services .list-group-item  {
+        background: #136eb4;
+        text-align: center;
+    }
+
 
 /*----------Collaborators----------*/
-#collaborators {
-    /*height: 550px;*/
-    color: #136eb4;
-}
-
 #collaborators .caption {
     text-align: center;
 }
 
 /*----------Contacts----------*/
-#contacts {
-    background: #136eb4;
-    color: #fff;
-    /*height: 55%;*/
-}
-    #contacts input {
-        width: 50%;
-    }
 
 /*----------Footer----------*/
 .footer {
     width: 100%;
     background: #252525; 
     color: #fff;
-    /*height: 55%;*/
 }
 
-.footer .opening-time {
-    color: #fff;
-    border: 1px solid #fff;
-    font-size: 12px;
-}
+    .footer .opening-time {
+        color: #fff;
+        border: 1px solid #fff;
+        font-size: 12px;
+    }
 
-.footer .opening-time dl {
-    border: 1px solid white;
-    border-collapse: collapse;
-    margin-bottom: 0;
-}
+        .footer .opening-time dl {
+            border: 1px solid white;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
 
 #opening-time {
     font-size: 12px;
     border: 1px solid #fff;
     margin: 10px;
     width: 200px;
-
 }
 
-#opening-time dl {
-    margin: 5px;
-}
+    #opening-time dl {
+        margin: 5px;
+    }
