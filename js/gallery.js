@@ -34,7 +34,6 @@ $.fn.gallery = function (col) {
   var $gallery = $(this);
  
   var $galleryList = $gallery.find('.gallery-list');
-  console.log($galleryList);
   var $imageContainers = $galleryList.children('.image-container');
   var $selected = $gallery.find('.selected');
   var $currentImg = $selected.find('#current-image');
@@ -51,6 +50,7 @@ $.fn.gallery = function (col) {
     var $this = $(this);
     var $imgSrc = $this.attr('src');
     var $index = $this.data('info');
+
     $('<div />').addClass('disabled-background').appendTo($galleryList);
 
     var $next = $imageContainers.children("[data-info='" + ($index + 1) + "']");
