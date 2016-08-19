@@ -109,3 +109,8 @@ body > header {
     #opening-time dl {
         margin: 5px;
     }
+
+#facebook > iframe {
+    padding: 10px;
+    height: 320px;
+}
