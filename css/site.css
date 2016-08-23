@@ -62,6 +62,9 @@ body > header {
 }
 
 /*----------Gallery----------*/
+#gallery {
+    width: 100%;
+}
 
 /*----------Services----------*/
 #services {

@@ -31,8 +31,9 @@ $.fn.gallery = function (col) {
 
   col = col || 4;
 
+
   var $gallery = $(this);
- 
+
   var $galleryList = $gallery.find('.gallery-list');
   var $imageContainers = $galleryList.children('.image-container');
   var $selected = $gallery.find('.selected');
@@ -40,9 +41,48 @@ $.fn.gallery = function (col) {
   var $nextImg = $selected.find('#next-image');
   var $prevImg = $selected.find('#previous-image');
 
-  $imageContainers.each(function (index, element) {
-    if (index % col === 0) {
-      $(element).addClass('clearfix');
+  function resizeImages(col) {
+    $imageContainers.each(function (index, element) {
+      $this = $(element);
+      if ($this.hasClass('clearfix')) {
+        $this.removeClass('clearfix');
+      }
+      if (index % col === 0) {
+        $(element).addClass('clearfix');
+      }
+    })
+  }
+
+
+  $(window).on('load resize', function () {
+    var $this = $(this)
+    var $windowWidth = $this.width();
+    console.log($windowWidth);
+    if ($windowWidth <= 565) {
+      console.log($windowWidth);
+      col = 1;
+      resizeImages(col);
+      $galleryList.css('margin-left', '25%')
+    } else if ($windowWidth <= 840) {
+      console.log($windowWidth);
+      col = 2;
+      resizeImages(col);
+      $galleryList.css('margin-left', '16%')
+    } else if ($windowWidth <= 1120) {
+      console.log($windowWidth);
+      col = 3;
+      resizeImages(col);
+      $galleryList.css('margin-left', '2%')
+    } else if ($windowWidth <= 1360) {
+      console.log($windowWidth);
+      col = 4;
+      resizeImages(col);
+      $galleryList.css('margin-left', '2%')
+    } else {
+      console.log($windowWidth);
+      col = 5;
+      resizeImages(col);
+      $galleryList.css('margin-left', '2%')
     }
   })
 
@@ -87,10 +127,10 @@ $.fn.gallery = function (col) {
     switchSrcAndData($prevImg, $currentImg);
     switchSrcAndData($currentImg, $this);
     switchSrcAndData($this, $next);
-  
+
   })
 
-   $prevImg.on('click', function () {
+  $prevImg.on('click', function () {
     var $this = $(this);
     var $index = $this.data('info');
     var $prevIndex = getPrevIndex($index);
