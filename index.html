@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 
     <link rel="stylesheet" href="css/site.css" type="text/css">
-    <link rel="stylesheet" href="css/query.css" type="text/css">
+    <link rel="stylesheet" href="css/queries.css" type="text/css">
     <link rel="stylesheet" href="css/gallery.css" type="text/css">
 
     <title>Учебен център "Галиция"</title>
@@ -33,20 +33,21 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Начало</a></li>
-                        <li><a href="#">За нас</a></li>
-                        <li><a href="#">Галерия</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Партньори</a></li>
-                        <li><a href="#">Контакти</a></li>
+                        <li><a calss="js-scroll-to-about" href="#">За нас</a></li>
+                        <li><a calss="js-scroll-to-gallery" href="#">Галерия</a></li>
+                        <li><a calss="js-scroll-to-services" href="#">Услуги</a></li>
+                        <li><a calss="js-scroll-to-collaborators" href="#">Партньори</a></li>
+                        <li><a calss="js-scroll-to-contacts" href="#">Контакти</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
         </nav>
+
         <!-- .jumbotron-fluid -->
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid js-home">
+            <div class="container-fluid text-center centrify">
                 <h1 class="display-3">Учебен център "Галиция"</h1>
                 <p class="lead">Красота, стил, въобръжение, изкуство.</p>
             </div>
@@ -54,7 +55,7 @@
         <!-- /.jumbotron-fluid -->
     </header>
     <main>
-        <section id="about">
+        <section id="about" class="js-about">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -73,14 +74,14 @@
             </div>
         </section>
 
-        <section id="gallery">
+        <section id="gallery" class="js-gallery">
             <header>
                 <h2>Галерия</h2>
             </header>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="<galle></galle>ry-list">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="gallery-list">
                             <div class="image-container">
                                 <img src="img/1-7.jpg" data-info="2" />
                             </div>
@@ -97,7 +98,10 @@
                                 <img src="img/2-1.jpg" data-info="6" />
                             </div>
                             <div class="image-container">
-                                <img src="img/2-1.jpg" data-info="6" />
+                                <img src="img/3.jpg" data-info="3" />
+                            </div>
+                            <div class="image-container">
+                                <img src="img/4-2.jpg" data-info="4" />
                             </div>
                             <div class="image-container">
                                 <img src="img/2-1.jpg" data-info="6" />
@@ -122,7 +126,7 @@
             </div>
         </section>
 
-        <section id="services">
+        <section id="services" class="js-services">
             <header>
                 <h2>Услуги</h2>
             </header>
@@ -162,12 +166,20 @@
             </div>
         </section>
 
-        <section id="collaborators">
+        <section id="collaborators" class="js-collaborators">
             <header>
                 <h2>Партньори</h2>
             </header>
             <div class="container-fluid">
                 <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="img/1-7.jpg" alt="Салон 1">
+                            <div class="caption">
+                                <h3>Примерен салон</h3>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
                             <img src="img/1-7.jpg" alt="Салон 1">
@@ -196,7 +208,7 @@
             </div>
 
         </section>
-        <section id="contacts">
+        <section id="contacts" class="js-contacts">
             <header>
                 <h2>Контакти</h2>
             </header>
@@ -331,11 +343,12 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <script src="js/scrolling.js"></script>
     <script src="js/gallery.js"></script>
 
     <script>
         $(function () {
-			$('#gallery').gallery(3);
+			$('#gallery').gallery(5);
 		});
 	</script>
 </body>

@@ -53,38 +53,13 @@ $.fn.gallery = function (col) {
     })
   }
 
+  resizeImages(col);
+
   function calculateMargin() {
     var contentWidth = ((col * 250) + (col - 1) * 10);
     var $marginPercentage = (($(window).width() - contentWidth) / 2);
     return $marginPercentage;
   }
-
-
-  $(window).on('load resize', function () {
-    var $this = $(this)
-    var $windowWidth = $this.width();
-    if ($windowWidth <= 612) {
-      col = 1;
-      resizeImages(col);
-      $galleryList.css('margin-left', calculateMargin());
-    } else if ($windowWidth <= 840) {
-      col = 2;
-      resizeImages(col);
-      $galleryList.css('margin-left', calculateMargin())
-    } else if ($windowWidth <= 1120) {
-      col = 3;
-      resizeImages(col);
-      $galleryList.css('margin-left', calculateMargin())
-    } else if ($windowWidth <= 1360) {
-      col = 4;
-      resizeImages(col);
-      $galleryList.css('margin-left', calculateMargin())
-    } else {
-      col = 5;
-      resizeImages(col);
-      $galleryList.css('margin-left', calculateMargin())
-    }
-  })
 
   $galleryList.on('click', 'img', function () {
     var $this = $(this);

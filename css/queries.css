@@ -1,0 +1,23 @@
+@media only screen and (max-device-width: 1440px) {
+    .jumbotron-fluid .centrify {
+        margin-top: 7%
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .jumbotron-fluid .centrify {
+        margin-top: 13%
+    }
+}
+
+@media only screen and (max-device-width: 550px) {
+    .jumbotron-fluid .centrify {
+        margin-top: 25%
+    }
+}
+
+@media only screen and (max-device-width: 320px) {
+    .jumbotron-fluid .centrify {
+        margin-top: 50%
+    }
+}
