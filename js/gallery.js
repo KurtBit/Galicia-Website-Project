@@ -41,6 +41,8 @@ $.fn.gallery = function (col) {
   var $nextImg = $selected.find('#next-image');
   var $prevImg = $selected.find('#previous-image');
 
+  resizeImages(col);
+  
   function resizeImages(col) {
     $imageContainers.each(function (index, element) {
       $this = $(element);
@@ -53,20 +55,15 @@ $.fn.gallery = function (col) {
     })
   }
 
-  resizeImages(col);
-
-  function calculateMargin() {
-    var contentWidth = ((col * 250) + (col - 1) * 10);
-    var $marginPercentage = (($(window).width() - contentWidth) / 2);
-    return $marginPercentage;
-  }
-
   $galleryList.on('click', 'img', function () {
     var $this = $(this);
     var $imgSrc = $this.attr('src');
     var $index = $this.data('info');
 
     $('<div />').addClass('disabled-background').appendTo($galleryList);
+
+    $('html').addClass('scrollRemove');
+    $('body').addClass('scrollRemove');
 
     var $next = $imageContainers.children("[data-info='" + ($index + 1) + "']");
     var $prev = $imageContainers.children("[data-info='" + ($index - 1) + "']");
@@ -90,6 +87,8 @@ $.fn.gallery = function (col) {
 
     $selected.hide();
 
+    $('html').removeClass('scrollRemove');
+    $('body').removeClass('scrollRemove');
     $galleryList.children('.disabled-background').remove();
   })
 
