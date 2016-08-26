@@ -9,11 +9,6 @@ html, body, .container-fluid {
     height:100%;
 }
 
-.scrollRemove {
-    height: 100%;
-    overflow: hidden;
-}
-
 /*----------Main Sections----------*/
 main section:nth-child(odd),
 main section:nth-child(even) {
@@ -67,7 +62,8 @@ body > header {
     color: #fff !important;
 }
 
-#main-navigation li:hover, active {
+#main-navigation li:hover, active,
+.list-group-item:hover, active {
     border: 0 solid;
     box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
     outline-color: rgba(255, 255, 255, 0);

@@ -62,9 +62,6 @@ $.fn.gallery = function (col) {
 
     $('<div />').addClass('disabled-background').appendTo($galleryList);
 
-    $('html').addClass('scrollRemove');
-    $('body').addClass('scrollRemove');
-
     var $next = $imageContainers.children("[data-info='" + ($index + 1) + "']");
     var $prev = $imageContainers.children("[data-info='" + ($index - 1) + "']");
 
@@ -87,8 +84,6 @@ $.fn.gallery = function (col) {
 
     $selected.hide();
 
-    $('html').removeClass('scrollRemove');
-    $('body').removeClass('scrollRemove');
     $galleryList.children('.disabled-background').remove();
   })
 
