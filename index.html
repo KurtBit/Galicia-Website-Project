@@ -228,7 +228,7 @@
             <header>
                 <h2>Контакти</h2>
             </header>
-            <form action="#" method="POST">
+            <form action="php/email-form.php" method="POST">
 
                 <div class="container-fluid">
                     <div class="row">
@@ -236,17 +236,17 @@
 
                             <div class="form-group">
                                 <label for="contacts-form-name">Име:</label>
-                                <input type="text" class="form-control" id="contacts-form-name">
+                                <input type="text" class="form-control" name="contacts-name" id="contacts-form-name">
                             </div>
 
                             <div class="form-group">
                                 <label for="contacts-form-email">И-мейл:</label>
-                                <input type="email" class="form-control" id="contacts-form-email">
+                                <input type="email" class="form-control" name="contacts-email" id="contacts-form-email">
                             </div>
 
                             <div class="form-group">
                                 <label for="contacts-form-phone">Телефон:</label>
-                                <input type="tel" class="form-control" id="contacts-form-phone">
+                                <input type="tel" class="form-control" name="contacts-phone " id="contacts-form-phone">
                             </div>
 
                         </div>
@@ -258,7 +258,7 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="form-group">
                                 <label for="contacts-form-content"></label>
-                                <textarea class="form-control" rows="8" id="contacts-form-content" placeholder="Напишете вашето съобщение тук!"></textarea>
+                                <textarea class="form-control" rows="8" name="contacts-content" id="contacts-form-content" placeholder="Напишете вашето съобщение тук!"></textarea>
                             </div>
                         </div>
                     </div>
