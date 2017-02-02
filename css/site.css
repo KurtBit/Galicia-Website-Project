@@ -12,7 +12,7 @@ html, body, .container-fluid {
 /*----------Main Sections----------*/
 main section:nth-child(odd),
 main section:nth-child(even) {
-    padding-top: 5%;
+    padding: 1%;
 }
 
 main section:nth-child(even),
