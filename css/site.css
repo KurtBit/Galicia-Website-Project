@@ -138,6 +138,11 @@ input[type="submit"] {
     width: 100%;
     border: none;
 }
+/*----------Captcha----------*/
+.g-recaptcha {
+    margin-left: 3.8%;
+    margin-top: 2%;
+}
 
 /*----------Footer----------*/
 .footer {
