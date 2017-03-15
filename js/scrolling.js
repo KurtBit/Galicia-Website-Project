@@ -1,4 +1,3 @@
-console.log('brb');
 $(document).ready(function () {
     $('#bs-example-navbar-collapse-1 > ul > li:nth-child(1) > a').on('click', function() {
         $('html body').animate({scrollTop: $('.js-home').offset().top}, 1000);
