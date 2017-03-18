@@ -35,7 +35,7 @@ $(document).ready(function () {
         rules: {
             "contacts-name": {
                 required: true,
-                rangelenght: [3, 10]
+                rangelength: [3, 15]
             },
             "contacts-email": {
                 required: true,
@@ -44,27 +44,32 @@ $(document).ready(function () {
             "contacts-phone": {
                 required: true
             },
-            "contacts-form-content": {
+            "contacts-content": {
                 required: true,
-                rangelenght: [10, 200]          
+                rangelength: [10, 200]
             }
         },
         messages: {
             "contacts-name": {
-                required: "Your user name is required!",
-                rangelenght: "Your name must be between {0} and {1} characters long!"
+                required: "Моля, въведете Вашето име.",
+                rangelength: "Името трябва да съдържа между {0} и {1} символа."
             },
             "contacts-email": {
-                required: "Your email is required!",
-                email: "You will have to enter a valid email!"
+                required: "Моля, въведете Вашия е-мейл.",
+                email: "Въведеният е-мейл не е валиден."
             },
             "contacts-phone": {
-                required: "Your telephone number is required!"
+                required: "Моля, въведете Вашия телефон."
             },
-            "contacts-form-content": {
-                required: "Please state how can we help you?",
-                rangelenght: "Please enter text between {0} and {1} charaters long."          
+            "contacts-content": {
+                required: "Кажете ни, с какво можем да Ви бъдем полезни?",
+                rangelength: "Текстът трябва да съдържа между {0} и {1} символа."
             }
-        }
+        },
+        errorPlacement: function(label, element) {
+            label.addClass('error-message');
+            label.insertAfter(element);
+        },
+        wrapper: 'span'
     })
 })

@@ -138,6 +138,19 @@ input[type="submit"] {
     width: 100%;
     border: none;
 }
+
+/*----------Contacts-Error----------*/
+#contact-form span.required-star,
+#contact-form .error {
+    color: #FF426C;
+}
+
+div.form-group > span {
+    display: inline-block;
+    text-align: center;
+    width: 100%
+}
+
 /*----------Captcha----------*/
 .g-recaptcha {
     margin-left: 3.8%;
