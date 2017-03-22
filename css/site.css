@@ -85,7 +85,11 @@ body > header {
 
 /*----------About----------*/
 #about {
-    line-height: 50px;
+    line-height: 30px;
+}
+
+#about p {
+    text-align: justify;
 }
 
 /*----------Gallery----------*/
@@ -128,8 +132,9 @@ input[type="submit"] {
     width: 40%;
 }
 
-#map {
-    width: 100%
+/*----------Map----------*/
+#map div{
+    padding: 0 10%;
 }
 
 #map iframe {
