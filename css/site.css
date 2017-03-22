@@ -133,10 +133,6 @@ input[type="submit"] {
 }
 
 /*----------Map----------*/
-#map div{
-    padding: 0 10%;
-}
-
 #map iframe {
     margin-top: 12px;
     height: 450px;
@@ -176,13 +172,16 @@ div.form-group > span {
 }
 
 #info {
-    padding-top: 2%;
-    width: 25%;
+    border: 1px solid #fff;
+}
+
+#info ul {
+    list-style: none;
+    padding: 5% 3% 0;
 }
 
 #facebook > iframe {
     height: 250px;
-    margin-left: 12%;
     width: 340px;
     border: none;
     overflow:hidden;
@@ -193,7 +192,6 @@ div.form-group > span {
     font-size: 12px;
     border: 1px solid #fff;
     width: 200px;
-    margin-left: 15%;
 }
 
     #opening-time dl {

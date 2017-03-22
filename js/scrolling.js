@@ -25,10 +25,14 @@ $(document).ready(function () {
         $('html body').animate({scrollTop: $('.js-contacts').offset().top - PADDING}, 1000);
     })
 
+    $('#bs-example-navbar-collapse-1 > ul > li:nth-child(7) > a').on('click', function() {
+        $('html body').animate({scrollTop: $('.js-map').offset().top - PADDING}, 1000);
+    })
+
     // js-about
     // js-gallery
     // js-services
     // js-collaborators
     // js-contacts
-
+    // js-map
 });
