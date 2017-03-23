@@ -154,8 +154,7 @@ div.form-group > span {
 
 /*----------Captcha----------*/
 .g-recaptcha {
-    margin-left: 3.8%;
-    margin-top: 2%;
+   margin: 2% 8.5%;
 }
 
 /*----------Footer----------*/
