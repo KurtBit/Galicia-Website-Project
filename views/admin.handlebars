@@ -1,8 +1,33 @@
-<ul>
-    {{#each images}}
-    <li>
-        <span>{{@index}}</span>
-        <span>{{this}} </span>
-    </li>
-    {{/each}}
-</ul>
+<section id="images">
+    <div class="container header-fix">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Preview</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each images}}
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>
+                        <strong>{{this}}</strong>
+                    </td>
+                    <td>
+                        <img src="img/{{this}}" class="img-preview">
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success">Add</button>
+                            <button type="button" class="btn btn-danger">Remove</button>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>

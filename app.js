@@ -9,12 +9,8 @@ const PORT = 3000;
 const ADDRESS = '127.0.0.1';
 
 // ViewEngine
-app.engine('handlebars', exphbs(
-    {
-        defaultLayout: 'main'
-    })
-);
-// app.set('views', './views');
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('views', './views');
 app.set('view engine', 'handlebars');
 
 // Static content

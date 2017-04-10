@@ -208,3 +208,30 @@ div.form-group > span {
     text-align: center;
     color: #aaa;
 }
+
+/*----------Fix----------*/
+.header-fix{
+    margin-top: 5%;
+}
+
+.hr-fix {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*----------Admin----------*/
+.img-preview {
+     height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.img-preview:hover {
+    width: 300px;
+    height: 300px;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+}
