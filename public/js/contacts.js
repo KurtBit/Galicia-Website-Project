@@ -1,5 +1,3 @@
-/// <reference path="../node_modules/jquery/dist/jquery.min.js" />
-
 // For reference -> https://www.emailjs.com/
 $(document).ready(function () {
     var userId = "user_8nEuGApJXaemlaFkYpa2v";
