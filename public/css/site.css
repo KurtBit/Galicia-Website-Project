@@ -15,23 +15,23 @@ main section:nth-child(even) {
     padding: 1%;
 }
 
-main section:nth-child(even),
+main section:nth-child(odd),
 .jumbotron-fluid {
     color: #E951FF;
 }
 
-main section:nth-child(odd),
+main section:nth-child(even),
 #main-navigation,
 #services .list-group-item {
     background: #E951FF;
 }
 
-main section:nth-child(even){
+main section:nth-child(odd){
     height: 70%;
     background: #fff !important;
 }
 
-main section:nth-child(odd){
+main section:nth-child(even){
     height: 30%;
     color: #fff !important;
 }
@@ -48,14 +48,6 @@ h4 {
 }
 
 /*----------Header----------*/
-body > header {
-    height: 90%;
-}
-
-.navbar-default,
-.jumbotron-fluid {
-    margin-bottom: 0 !important;
-}
 
 /*----------Navbar----------*/
 #main-navigation a {
@@ -72,6 +64,14 @@ body > header {
 }
 
 /*----------Jumbotron----------*/
+#jumbotron {
+    padding: 0;
+}
+
+.jumbotron {
+    margin-bottom: 0 !important;
+}
+
 .jumbotron-fluid {
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/seventh-haircut.jpg");
     background-repeat: no-repeat;

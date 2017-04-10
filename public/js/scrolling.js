@@ -2,7 +2,7 @@ $(document).ready(function () {
     const PADDING = 50;
 
     $('#bs-example-navbar-collapse-1 > ul > li:nth-child(1) > a').on('click', function() {
-        $('html body').animate({scrollTop: $('.js-home').offset().top - PADDING}, 1000);
+        $('html body').animate({scrollTop: $('.js-jumbotron').offset().top - PADDING}, 1000);
     })
 
     $('#bs-example-navbar-collapse-1 > ul > li:nth-child(2) > a').on('click', function() {
