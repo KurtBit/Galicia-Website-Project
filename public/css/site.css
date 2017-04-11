@@ -227,11 +227,11 @@ div.form-group > span {
     border: 1px solid;
 }
 
-.img-preview:hover {
+/*.img-preview:hover {
     width: 300px;
     height: 300px;
     -webkit-transition: all 2s ease;
     -moz-transition: all 2s ease;
     -ms-transition: all 2s ease;
     transition: all 2s ease;
-}
+}*/
