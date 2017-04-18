@@ -1,7 +1,10 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const fs = require('fs');
-var path = require('path')
+const path = require('path')
+const passport = require('passport');
+const bodyParser = require('body-parser');
+require('./passport-init');
 
 var app = express();
 
@@ -19,27 +22,25 @@ app.use(express.static('node_modules/jquery/dist'));
 app.use(express.static('node_modules/jquery-validation/dist'));
 app.use(express.static('node_modules/bootstrap/dist'));
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(require('express-session')({
+    secret: 'keyboard cat', resave: false, saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.get('/', function (req, res) {
     res.render('home');
 });
 
-app.get('/admin', function (req, res) {
-    fs.readdir('./public/img/', function (err, list) {
-        if (err) {
-            done(err);
-        }
-        var images = list.filter(file => path.extname(file) === '.jpg');
+var authRouter = require('./auth');
+app.use(authRouter);
 
-        res.render('admin', {
-             images: images,
-             layout: 'admin-area'
-         });
-    });
-});
-
-app.get('/login', function (req, res) {
-    res.render('login', {layout: 'admin-area'});
-})
+var adminRouter = require('./admin');
+app.use(adminRouter);
 
 app.listen(PORT, function () {
     console.log(`Starting service at ${ADDRESS} on port ${PORT}`);
