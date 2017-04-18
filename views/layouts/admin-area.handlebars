@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/site.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Учебен център "Галиция"</title>
+</head>
+
+<body>
+
+    <main>
+        {{{body}}}
+    </main>
+
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    {{!--TODO(Domi): Figure out a way to add section scripts!--}}
+    <script>
+        $(document).ready(function () {
+            const SCALE_FACTOR = 4;
+
+            var $images = $("[id^='js-img-']");
+
+            if ($images.length) {
+                $images.on('mouseover', function (event) {
+                    var $target = $(event.target);
+
+                    var id = $target.attr('id');
+                    var imgPreviewId = 'js-img-preview-' + id.substring(17);
+
+                    $('<img>')
+                        .attr('src', $target.attr('src'))
+                        .attr('id', imgPreviewId)
+                        .css({
+                            "position": "absolute",
+                            "left": $target.position().left - $target.width(),
+                            "top": $target.position().top - $target.height(),
+                            "width": $target.width() * SCALE_FACTOR,
+                            "height": $target.height() * SCALE_FACTOR,
+                            "border-radius": "5px"
+                        }).appendTo($target.parent());
+                });
+            };
+
+            $('.img-preview-container').on('mouseleave', function (event) {
+                $previewImage = $("[id^='js-img-preview-']");
+                if ($previewImage) {
+                    $previewImage.remove();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

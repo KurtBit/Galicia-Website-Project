@@ -9,7 +9,7 @@ const PORT = 3000;
 const ADDRESS = '127.0.0.1';
 
 // ViewEngine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main-area' }));
 app.set('views', './views');
 app.set('view engine', 'handlebars');
 
@@ -30,9 +30,16 @@ app.get('/admin', function (req, res) {
         }
         var images = list.filter(file => path.extname(file) === '.jpg');
 
-        res.render('admin', { images });
+        res.render('admin', {
+             images: images,
+             layout: 'admin-area'
+         });
     });
 });
+
+app.get('/login', function (req, res) {
+    res.render('login', {layout: 'admin-area'});
+})
 
 app.listen(PORT, function () {
     console.log(`Starting service at ${ADDRESS} on port ${PORT}`);
