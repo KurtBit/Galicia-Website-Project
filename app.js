@@ -1,7 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const fs = require('fs');
-const path = require('path')
+
 const passport = require('passport');
 const bodyParser = require('body-parser');
 require('./passport-init');
@@ -38,6 +37,15 @@ app.get('/', function (req, res) {
 
 var authRouter = require('./auth');
 app.use(authRouter);
+
+app.use(function(req, res, next){
+    if(req.isAuthenticated()){
+        next();
+        return;
+    }
+
+    res.redirect('/login');
+});
 
 var adminRouter = require('./admin');
 app.use(adminRouter);
