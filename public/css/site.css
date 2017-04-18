@@ -120,6 +120,9 @@ h4 {
         text-align: center;
     }
 
+.first-service-group {
+    margin-top: 3%;
+}
 
 /*----------Collaborators----------*/
 #collaborators .caption {
@@ -128,7 +131,7 @@ h4 {
 
 /*----------Contacts----------*/
 input[type="submit"] {
-    margin-left: 30%;
+    margin-left: 33.8%;
     width: 40%;
 }
 
