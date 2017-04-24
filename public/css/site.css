@@ -185,6 +185,7 @@ div.form-group > span {
 }
 
 #info {
+    padding-left: 0;
     border: 1px solid #fff;
 }
 
