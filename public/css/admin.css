@@ -1,0 +1,14 @@
+.galery-admin-panel{
+   
+}
+
+.img-preview {
+     height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.header-fix{
+    margin-top: 5%;
+}

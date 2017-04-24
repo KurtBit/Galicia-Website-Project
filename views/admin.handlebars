@@ -18,7 +18,7 @@
     </nav>
 </header>
 
-<section id="images">
+<section id="galery-admin">
     <div class="container header-fix">
         <div class="container">
             <h2>Collapsible Panel</h2>
@@ -31,38 +31,37 @@
                         </h4>
                     </div>
                     <div id="collapse1" class="panel-collapse collapse">
-                        <div class="panel-body">
-
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Preview</th>
-                                        <th>Options</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{#each images}}
-                                    <tr>
-                                        <th scope="row">{{@index}}</th>
-                                        <td>
-                                            <strong>{{this}}</strong>
-                                        </td>
-                                        <td class="img-preview-container">
-                                            <img src="img/{{this}}" class="img-preview" id="js-img-{{@index}}">
-                                        </td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success">Add</button>
+                        <div class="galery-admin-panel">
+                            <div class="panel-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Preview</th>
+                                            <th>Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each images}}
+                                        <tr>
+                                            <th scope="row">{{@index}}</th>
+                                            <td>
+                                                <strong>{{this}}</strong>
+                                            </td>
+                                            <td class="img-preview-container">
+                                                <img src="img/{{this}}" class="img-preview" id="js-img-{{@index}}">
+                                            </td>
+                                            <td>
                                                 <button type="button" class="btn btn-danger">Remove</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {{/each}}
-                                </tbody>
-                            </table>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+
                         <div class="panel-footer">Panel Footer</div>
                     </div>
                 </div>
