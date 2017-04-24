@@ -1,12 +1,39 @@
+@media only screen and (max-device-width: 2652px) {
+    #facebook {
+        margin-left: 18%;
+    }
+}
+
+@media only screen and (max-device-width: 2000px) {
+    #facebook {
+        margin-left: 15%;
+    }
+}
+
+@media only screen and (max-device-width: 1724px) {
+    #facebook {
+        margin-left: 13%;
+    }
+}
+
 @media only screen and (max-device-width: 1440px) {
     .jumbotron-fluid .centrify {
         margin-top: 7%
     }
+
+    #facebook {
+        margin-left: 10%;
+    }
 }
 
-@media only screen and (max-device-width: 768px) {
+/*768*/
+@media only screen and (max-device-width: 1000px) {
     .jumbotron-fluid .centrify {
         margin-top: 13%
+    }
+    
+    #facebook {
+        margin-left: 5%;
     }
 }
 
