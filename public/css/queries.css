@@ -2,16 +2,28 @@
     #facebook {
         margin-left: 18%;
     }
+
+    .certificate-align {
+        margin-left: 22%;
+    }
 }
 
 @media only screen and (max-device-width: 2000px) {
     #facebook {
         margin-left: 15%;
     }
+
+    .certificate-align {
+        margin-left: 18%;
+    }
 }
 
 @media only screen and (max-device-width: 1724px) {
     #facebook {
+        margin-left: 13%;
+    }
+
+    .certificate-align {
         margin-left: 13%;
     }
 }
