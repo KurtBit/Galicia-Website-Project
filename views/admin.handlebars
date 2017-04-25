@@ -44,7 +44,7 @@
                                     <h4 class="modal-title">Modal Header</h4>
                                 </div>
                                 <div class="modal-body">
-                                    
+
                                     <form id="upload-image" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Upload Image</label>
@@ -58,9 +58,20 @@
                                             </div>
                                             <img id='img-upload' />
                                         </div>
-                                        <button type="submit" id="upload-image-submit" class="btn btn-primary">Upload</button>
+
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <button type="submit" id="upload-image-submit" class="btn btn-primary">Upload</button>
+                                            </div>
+
+                                            <div class="col-md-offset-8 col-md-2">
+                                                <div class="pull-right">
+                                                    <div class="loader" style="display: none"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </form>
-                                    
+
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn btn-default" data-dismiss="modal">Close</button>
@@ -71,14 +82,6 @@
                 </div>
             </div>
             <hr>
-
-
-
-
-
-
-
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group">
@@ -119,14 +122,12 @@
                                         </table>
                                     </div>
                                 </div>
-
                                 <div class="panel-footer">Panel Footer</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

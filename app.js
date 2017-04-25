@@ -2,13 +2,8 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const path = require('path');
-const fs = require('fs');
-require('./passport-init');
-var images = require('./data/images.json');
 
-var multer = require('multer');
-var upload = multer({ dest: '/tmp/' });
+require('./passport-init');
 
 var app = express();
 
@@ -54,29 +49,6 @@ app.use(function (req, res, next) {
 
 var adminRouter = require('./admin');
 app.use(adminRouter);
-
-// TODO(Domi): Remove from app.js!
-app.post('/admin', upload.any(), function (req, res) {
-    var file = req.files[0];
-
-    var fileName = file.originalname;
-
-    images.push({
-        name: fileName.replace(path.extname(fileName), ""),
-        path: "img/" + file.originalname
-    })
-
-    fs.readFile(file.path, function (err, data) {
-        if (err) {
-            res.sendStatus('500');
-            return next();
-        }
-        var newPath = "../public/img/" + file.originalname;
-        fs.writeFile(newPath, data);
-    });
-
-    res.sendStatus('200');
-});
 
 app.listen(PORT, function () {
     console.log(`Starting service at ${ADDRESS} on port ${PORT}`);
