@@ -108,13 +108,13 @@
                                                 <tr>
                                                     <th scope="row">{{@index}}</th>
                                                     <td>
-                                                        <strong>{{this.name}}</strong>
+                                                        <strong>{{this.Name}}</strong>
                                                     </td>
                                                     <td class="img-preview-container">
-                                                        <img src="{{this.path}}" class="img-preview" id="js-img-{{@index}}" alt="{{this.name}}">
+                                                        <img src="{{this.Url}}" class="img-preview" id="js-img-{{@index}}" alt="{{this.Name}}">
                                                     </td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger">Remove</button>
+                                                        <button type="button" id="js-btn-remove-{{@index}}" class="btn btn-danger" js-img-id="{{@index}}">Remove</button>
                                                     </td>
                                                 </tr>
                                                 {{/each}}

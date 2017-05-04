@@ -40,6 +40,20 @@
 
     <script src="js/gallery-admin.js"></script>
     <script src="js/gallery-admin-upload.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("[id^='js-btn-remove-']").on('click', function (event) {
+                let id = $(this).attr('js-img-id');
+                $.ajax({
+                    url: `/remove?id=${id}`,
+                    method: 'get',
+                    success: function (data) {
+                        console.log(data);
+                    }
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>
