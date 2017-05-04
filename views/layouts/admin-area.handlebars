@@ -43,12 +43,13 @@
     <script>
         $(document).ready(function () {
             $("[id^='js-btn-remove-']").on('click', function (event) {
+                let $self = $(this);
                 let id = $(this).attr('js-img-id');
                 $.ajax({
                     url: `/remove?id=${id}`,
                     method: 'get',
                     success: function (data) {
-                        console.log(data);
+                        $self.closest('tr').fadeOut(300, function () { $(this).remove(); });
                     }
                 })
             })
