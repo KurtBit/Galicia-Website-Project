@@ -1,11 +1,36 @@
+/*----------Navbar----------*/
+#main-navigation,
+#navbar a {
+    background-color: #E951FF;
+}
+
+#main-navigation a {
+    color: #fff !important;
+}
+
+#main-navigation li:hover, active,
+.list-group-item:hover, active {
+    border: 0 solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+}
+
+.navbar-right {
+        margin-right: 0 !important; 
+    }
+/*----------!Navbar----------*/
+
 .img-preview {
-     height: 60px;
+    height: 60px;
     width: 60px;
     border-radius: 5px;
     border: 1px solid;
 }
 
-.header-fix{
+.header-fix {
+    padding-top: 10px;
     margin-top: 5%;
 }
 
