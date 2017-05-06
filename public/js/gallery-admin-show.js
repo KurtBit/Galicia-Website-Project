@@ -4,6 +4,9 @@ $(document).ready(function () {
             $.ajax({
                 url: '/show',
                 method: 'get',
+                xhrFields: {
+                    withCredentials: true
+                },
                 success: function (data) {
                     $('.js-galery-images-collapsible-body').html('');
 

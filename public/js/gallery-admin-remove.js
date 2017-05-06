@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(document).on('click',"[class^='js-btn-remove-']", function (event) {
+    $(document).on('click', "[class^='js-btn-remove-']", function (event) {
         console.log(event);
 
         let $self = $(this);
@@ -7,6 +7,9 @@ $(document).ready(function () {
         $.ajax({
             url: `/remove?id=${id}`,
             method: 'get',
+            xhrFields: {
+                withCredentials: true
+            },
             success: function (data) {
                 $self.closest('tr').fadeOut(300, function () { $(this).remove(); });
 

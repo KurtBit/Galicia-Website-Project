@@ -1,2 +1,5 @@
 node_modules
 Thumbs.db
+*.jpg
+*.png
+*.PNG

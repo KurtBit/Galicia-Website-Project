@@ -69,6 +69,8 @@ router.get('/remove', function (req, res) {
         return res.sendStatus('200');
     }
 
+    console.log(`File ${image.Url} was deleted!`);
+    
     let index = images.indexOf(image);
     images.splice(index, 1);
 
@@ -77,7 +79,6 @@ router.get('/remove', function (req, res) {
             res.sendStatus('500');
             return next();
         }
-        console.log(`${image.Url} is deleted`);
 
         saveImages(images, res);
     });

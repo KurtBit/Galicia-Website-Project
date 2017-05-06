@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const passport = require('passport');
 const bodyParser = require('body-parser');
+const images = require('./data/images.json');
 
 require('./passport-init');
 
@@ -32,7 +33,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', function (req, res) {
-    res.render('home');
+    res.render('home', { images: images });
 });
 
 var authRouter = require('./auth');
@@ -41,10 +42,18 @@ app.use(authRouter);
 app.use(function (req, res, next) {
     if (req.isAuthenticated()) {
         next();
+
         return;
     }
 
-    res.redirect('/login');
+    switch (req.url) {
+        case '/show': {
+            return;
+        }
+        default: {
+            res.redirect('/login');
+        }
+    }
 });
 
 var adminRouter = require('./admin');

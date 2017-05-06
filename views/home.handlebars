@@ -38,98 +38,13 @@
                 <div class="col-sm-6" id="slider-thumbs">
                     <!-- Bottom switcher of slider -->
                     <ul class="hide-bullets">
+                        {{#each images}}
                         <li class="col-sm-3">
                             <a class="thumbnail" id="carousel-selector-0">
-                                <img class="gallery-left" src="img/first-haircut.jpg">
+                                <img class="gallery-left" src="{{this.Url}}" alt="{{this.Name}}">
                             </a>
                         </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-1">
-                                <img class="gallery-left" src="img/second-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-2">
-                                <img class="gallery-left" src="img/third-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-3">
-                                <img class="gallery-left" src="img/fourth-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-4">
-                                <img class="gallery-left" src="img/fifth-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-5">
-                                <img class="gallery-left" src="img/sixth-haircut.jpg">
-                            </a>
-                        </li>
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-6">
-                                <img class="gallery-left" src="img/seventh-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-7">
-                                <img class="gallery-left" src="img/eight-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-8">
-                                <img class="gallery-left" src="img/ninth-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-9">
-                                <img class="gallery-left" src="img/tenth-haircut.jpg">
-                            </a>
-                        </li>
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-10">
-                                <img class="gallery-left" src="img/eleventh-haircut.jpg">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-11">
-                                <img class="gallery-left" src="http://placehold.it/150x150&text=11">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-12">
-                                <img class="gallery-left" src="http://placehold.it/150x150&text=12">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-13">
-                                <img class="gallery-left" src="http://placehold.it/150x150&text=13">
-                            </a>
-                        </li>
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-14">
-                                <img class="gallery-left" src="http://placehold.it/150x150&text=14">
-                            </a>
-                        </li>
-
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-15">
-                                <img class="gallery-left" src="http://placehold.it/150x150&text=15">
-                            </a>
-                        </li>
+                        {{/each}}
                     </ul>
                 </div>
                 <div class="col-sm-6">
