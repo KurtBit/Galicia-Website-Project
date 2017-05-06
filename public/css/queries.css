@@ -49,6 +49,14 @@
     }
 }
 
+@media only screen and (max-device-width: 768px) {
+    .thumbnail {
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 @media only screen and (max-device-width: 550px) {
     .jumbotron-fluid {
         margin-top: 25%
