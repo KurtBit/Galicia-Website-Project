@@ -67,6 +67,11 @@
     animation: spin 2s linear infinite;
 }
 
+.js-galery-images-collapsible-body td,
+.js-galery-images-collapsible-body th {
+    vertical-align: middle !important;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
