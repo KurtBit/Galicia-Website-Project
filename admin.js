@@ -3,22 +3,25 @@ const path = require('path')
 const fs = require('fs');
 const fileExists = require('file-exists');
 const _ = require('lodash');
+
 var multer = require('multer');
 var upload = multer({ dest: '/tmp/' });
 
 var images = require(`${__dirname}/data/images.json`);
-var ImageModel = require('./models/image')
+var ImageModel = require('./models/image');
+
+var auth = require('./auth');
 
 var router = express.Router();
 module.exports = router;
 
-router.get('/admin', function (req, res) {
+router.get('/admin', auth.isAuthenticated, function (req, res, next) {
     res.render('admin', {
         layout: 'admin-area'
     });
 });
 
-router.post('/add', upload.any(), function (req, res) {
+router.post('/add', upload.any(), function (req, res, next) {
     var file = req.files[0];
 
     var fileName = file.originalname;
@@ -68,7 +71,7 @@ router.post('/remove', function (req, res) {
     }
 
     console.log(`File ${image.Url} was deleted!`);
-    
+
     let index = images.indexOf(image);
     images.splice(index, 1);
 

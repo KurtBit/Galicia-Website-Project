@@ -1,18 +1,24 @@
 var express = require('express');
-var exphbs = require('express-handlebars');
-var bodyParser = require('body-parser');
-
-var passport = require('passport');
 var session = require('express-session');
+var exphbs = require('express-handlebars');
 
-var images = require('./data/images.json');
-
-require('./passport-init');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
 var app = express();
 
+//Set up body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//Set up cookie parser
+app.use(cookieParser());
+app.use(session({ secret: "Keyboard Doge FTW" }));
+
 //Set up default view engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main-area' }));
+
+//Set up views location
 app.set('views', './views');
 app.set('view engine', 'handlebars');
 
@@ -22,37 +28,13 @@ app.use(express.static('node_modules/jquery/dist'));
 app.use(express.static('node_modules/jquery-validation/dist'));
 app.use(express.static('node_modules/bootstrap/dist'));
 
-//Set up body parser
-app.use(bodyParser.urlencoded({ extended: true }));
-
-//Set up passport local authentication
-app.use(session({ secret: 'keyboard cat' }));
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.get('/', function (req, res) {
-    res.render('home', { images: images });
+    res.render('home', { images: require('./data/images.json') });
 });
 
+//TODO(Domi): Extract to helper function!
 var authRouter = require('./auth');
-app.use(authRouter);
-
-app.use(function (req, res, next) {
-    if (req.isAuthenticated()) {
-        next();
-
-        return;
-    }
-    switch (req.url) {
-        case '/show': {
-            next();
-            return;
-        }
-        default: {
-            res.redirect('/login');
-        }
-    }
-});
+app.use(authRouter.router);
 
 var adminRouter = require('./admin');
 app.use(adminRouter);

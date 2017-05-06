@@ -47,9 +47,6 @@ $(document).ready(function () {
             contentType: false,
             enctype: 'multipart/form-data',
             processData: false,
-            xhrFields: {
-                withCredentials: true
-            },
             success: function (data) {
                 $('.loader').toggle();
                 $('#myModal').modal('hide');
