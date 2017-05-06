@@ -39,22 +39,9 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script src="js/gallery-admin.js"></script>
+    <script src="js/gallery-admin-show.js"></script>
     <script src="js/gallery-admin-upload.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("[id^='js-btn-remove-']").on('click', function (event) {
-                let $self = $(this);
-                let id = $(this).attr('js-img-id');
-                $.ajax({
-                    url: `/remove?id=${id}`,
-                    method: 'get',
-                    success: function (data) {
-                        $self.closest('tr').fadeOut(300, function () { $(this).remove(); });
-                    }
-                })
-            })
-        })
-    </script>
+    <script src="js/gallery-admin-remove.js"></script>
 </body>
 
 </html>

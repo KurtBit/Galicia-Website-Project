@@ -9,12 +9,14 @@ class ImageModel {
     }
 
     generateId() {
-        var sortedImages = _(images).sort(x => x.Id);
-        if (images.length < 1) {
-            return 0;
-        }
-        
-        return (sortedImages.pop().Id + 1);
+        var sortedImages = images.sort(function(a, b){
+            return (a.Id - b.Id);
+        });
+
+        var length = sortedImages.length;
+        var lastImage = sortedImages[length - 1];
+
+        return (length < 1) ? 0 : (lastImage.Id + 1);
     }
 }
 

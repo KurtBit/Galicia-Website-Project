@@ -17,7 +17,6 @@
                 } else {
                     if (log) alert(log);
                 }
-
             });
             function readURL(input) {
                 if (input.files && input.files[0]) {
@@ -53,6 +52,8 @@
                     success: function (data) {
                         $('.loader').toggle();
                         $('#myModal').modal('hide');
+                        
+                        $('.js-collapse-trigger').trigger('click');
                     }
                 });
             });

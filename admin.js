@@ -6,7 +6,7 @@ const _ = require('lodash');
 var multer = require('multer');
 var upload = multer({ dest: '/tmp/' });
 
-var images = require('./data/images.json');
+var images = require(`${__dirname}/data/images.json`);
 var ImageModel = require('./models/image')
 
 var router = express.Router();
@@ -14,7 +14,7 @@ module.exports = router;
 
 router.get('/admin', function (req, res) {
     res.render('admin', {
-        images: images,
+        // images: images,
         layout: 'admin-area'
     });
 });
@@ -49,7 +49,9 @@ router.post('/add', upload.any(), function (req, res) {
             let name = fileName.replace(path.extname(fileName), "");
             let url = `img/${file.originalname}`;
 
-            images.push(new ImageModel(name, url));
+            let image = new ImageModel(name, url);
+
+            images.push(image);
 
             saveImages(images, res);
         });
@@ -81,10 +83,17 @@ router.get('/remove', function (req, res) {
     });
 });
 
-function saveImages(images, res) {
-    fs.writeFile(`${__dirname}/data/images.json`, JSON.stringify(images), function (err) {
+router.get('/show', function (req, res) {
+    res.render('admin-show', {
+        images: images,
+        layout: false
+    });
+})
+
+function saveImages(_images, res) {
+    fs.writeFile(`${__dirname}/data/images.json`, JSON.stringify(_images), function (err) {
         if (err) {
-             return res.sendStatus('500');
+            return res.sendStatus('500');
         }
         return res.sendStatus('200');
     });

@@ -1,5 +1,3 @@
-/// <reference path="../node_modules/jquery/dist/jquery.min.js" />
-
 $.fn.gallery = function (col) {
 
   function getNextIndex(index) {
