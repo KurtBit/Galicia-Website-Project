@@ -1,12 +1,10 @@
 $(document).ready(function () {
-    $(document).on('click', "[class^='js-btn-remove-']", function (event) {
-        console.log(event);
-
+    $(document).on('click', "[id^='js-btn-remove-']", function (event) {
         let $self = $(this);
         let id = $(this).attr('js-img-id');
         $.ajax({
             url: `/remove?id=${id}`,
-            method: 'get',
+            method: 'post',
             xhrFields: {
                 withCredentials: true
             },
