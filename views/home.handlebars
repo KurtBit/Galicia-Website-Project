@@ -32,46 +32,188 @@
         <h2>Галерия</h2>
     </header>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-10">
-                <div class="gallery-list">
-                    <div class="image-container">
-                        <img src="img/first-haircut.jpg" alt="first-haircut" data-info="1" />
-                    </div>
-                    <div class="image-container">
-                        <img src="img/third-haircut.jpg" alt="third-haircut" data-info="2" />
-                    </div>
-                    <div class="image-container">
-                        <img src="img/fourth-haircut.jpg" alt="fourth-haircut" data-info="3" />
-                    </div>
-                    <div class="image-container">
-                        <img src="img/sixth-haircut.jpg" alt="sixth-haircut" data-info="4" />
-                    </div>
-                    <div class="image-container">
-                        <img src="img/second-haircut.jpg" alt="second-haircut" data-info="5" />
-                    </div>
-                    <div class="image-container">
-                        <img src="img/fifth-haircut.jpg" alt="fifth-haircut" data-info="6" />
-                    </div>
-                    <div class="image-container">
-                        <img src="img/second-haircut.jpg" alt="second-haircut" data-info="7" />
-                    </div>
-                    <div class="image-container">
-                        <img src="img/fifth-haircut.jpg" alt="fifth-haircut" data-info="8" />
+        <div id="main_area">
+            <!-- Slider -->
+            <div class="row">
+                <div class="col-sm-6" id="slider-thumbs">
+                    <!-- Bottom switcher of slider -->
+                    <ul class="hide-bullets">
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-0">
+                                <img class="gallery-left" src="img/first-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-1">
+                                <img class="gallery-left" src="img/second-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-2">
+                                <img class="gallery-left" src="img/third-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-3">
+                                <img class="gallery-left" src="img/fourth-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-4">
+                                <img class="gallery-left" src="img/fifth-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-5">
+                                <img class="gallery-left" src="img/sixth-haircut.jpg">
+                            </a>
+                        </li>
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-6">
+                                <img class="gallery-left" src="img/seventh-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-7">
+                                <img class="gallery-left" src="img/eight-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-8">
+                                <img class="gallery-left" src="img/ninth-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-9">
+                                <img class="gallery-left" src="img/tenth-haircut.jpg">
+                            </a>
+                        </li>
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-10">
+                                <img class="gallery-left" src="img/eleventh-haircut.jpg">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-11">
+                                <img class="gallery-left" src="http://placehold.it/150x150&text=11">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-12">
+                                <img class="gallery-left" src="http://placehold.it/150x150&text=12">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-13">
+                                <img class="gallery-left" src="http://placehold.it/150x150&text=13">
+                            </a>
+                        </li>
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-14">
+                                <img class="gallery-left" src="http://placehold.it/150x150&text=14">
+                            </a>
+                        </li>
+
+                        <li class="col-sm-3">
+                            <a class="thumbnail" id="carousel-selector-15">
+                                <img class="gallery-left" src="http://placehold.it/150x150&text=15">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-12" id="slider">
+                        <!-- Top part of the slider -->
+                        <div class="row">
+                            <div class="col-sm-12" id="carousel-bounding-box">
+                                <div class="carousel slide" id="myCarousel">
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        <div class="active item" data-slide-number="0">
+                                            <img src="img/first-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="1">
+                                            <img src="img/second-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="2">
+                                            <img src="img/third-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="3">
+                                            <img src="img/fourth-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="4">
+                                            <img src="img/fifth-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="5">
+                                            <img src="img/sixth-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="6">
+                                            <img src="img/seventh-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="7">
+                                            <img src="img/eight-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="8">
+                                            <img src="img/ninth-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="9">
+                                            <img src="img/tenth-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="10">
+                                            <img src="img/eleventh-haircut.jpg">
+                                        </div>
+
+                                        <div class="item" data-slide-number="11">
+                                            <img src="http://placehold.it/470x480&text=11"></div>
+
+                                        <div class="item" data-slide-number="12">
+                                            <img src="http://placehold.it/470x480&text=12"></div>
+
+                                        <div class="item" data-slide-number="13">
+                                            <img src="http://placehold.it/470x480&text=13"></div>
+
+                                        <div class="item" data-slide-number="14">
+                                            <img src="http://placehold.it/470x480&text=14"></div>
+
+                                        <div class="item" data-slide-number="15">
+                                            <img src="http://placehold.it/470x480&text=15"></div>
+                                    </div>
+                                    <!-- Carousel nav -->
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="selected">
-                    <div class="previous-image">
-                        <img src="img/first-haircut.jpg" alt="first-haircut" id="previous-image" />
-                    </div>
-                    <div class="current-image">
-                        <img src="img/fourth-haircut.jpg" alt="fourth-haircut" id="current-image" />
-                    </div>
-                    <div class="next-image">
-                        <img src="img/sixth-haircut.jpg" alt="sixth-haircut" id="next-image" />
-                    </div>
-                </div>
+                <!--/Slider-->
             </div>
+
         </div>
     </div>
 </section>

@@ -1,79 +1,19 @@
-.gallery {
-    display: inline-block;
-    border: 1px solid grey;
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
 }
 
-.gallery .image-container {
-    float: left;
-    width: 250px;
-    height: 200px;
-    margin: 5px;
+.thumbnail {
+    padding: 0;
 }
 
-.gallery .image-container img {
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
     width: 100%;
-    height: 100%;
-    border-radius: 20px;
 }
 
-.gallery .selected {
+.gallery-left {
+    max-height: 150px;
+    min-height: 150px;
     width: 100%;
-    position: absolute;
-    top: 10%;
-    left: 0;
-    z-index: 200;
-}
-
-.gallery .selected img {
-    float: left;
-    border: 1px solid black;
-    border-radius: 25px;
-    width: 75%;
-    position: absolute;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.gallery .selected .previous-image {
-    position: absolute;
-    left: 0;
-    top: 100px;
-    width: 25%;
-}
-
-.gallery .selected .current-image {
-    position: absolute;
-    left: 25%;
-    width: 50%;
-}
-
-.gallery .selected .next-image {
-    position: absolute;
-    left: 75%;
-    top: 100px;
-    width: 25%;
-}
-
-.gallery .blurred {
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    filter: blur(10px);
-}
-
-.gallery .clearfix {
-    clear: both;
-}
-
-.gallery .disabled-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
 }
