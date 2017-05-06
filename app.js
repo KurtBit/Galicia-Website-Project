@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 require('./passport-init');
 
-var app = express();//@Dominent si haresva Angelika i si q predstavq dokato go opravqm
+var app = express();
 
 const PORT = 3000;
 const ADDRESS = '127.0.0.1';
