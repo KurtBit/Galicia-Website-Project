@@ -14,7 +14,6 @@ module.exports = router;
 
 router.get('/admin', function (req, res) {
     res.render('admin', {
-        // images: images,
         layout: 'admin-area'
     });
 });
@@ -45,7 +44,6 @@ router.post('/add', upload.any(), function (req, res) {
 
             console.log(`File ${fileName} was successfuly saved to: ${newPath}`);
 
-            // TODO(Domi): Change id to uuid
             let name = fileName.replace(path.extname(fileName), "");
             let url = `img/${file.originalname}`;
 
@@ -58,7 +56,7 @@ router.post('/add', upload.any(), function (req, res) {
     });
 });
 
-router.get('/remove', function (req, res) {
+router.post('/remove', function (req, res) {
     let image = _.find(images, x => x.Id == req.query.id);
 
     var serverPath = `${__dirname}/public/${image.Url}`;
