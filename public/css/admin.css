@@ -1,3 +1,7 @@
+#galery-admin {
+    color: #E951FF;
+}
+
 /*----------Navbar----------*/
 #main-navigation,
 #navbar a {
@@ -22,6 +26,13 @@
     }
 /*----------!Navbar----------*/
 
+/*----------Table----------*/
+thead {
+    color: white;
+    background-color: blueviolet;
+}
+
+/*----------!Table----------*/
 .img-preview {
     height: 60px;
     width: 60px;
