@@ -1,0 +1,1 @@
+ImageImporter.Client.exe -source "../public/img" -target "../data/images.json"
