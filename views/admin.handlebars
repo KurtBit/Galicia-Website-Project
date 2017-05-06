@@ -82,48 +82,26 @@
                 </div>
             </div>
             <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
-                                </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse">
-                                <div class="galery-admin-panel">
-                                    <div class="panel-body">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Preview</th>
-                                                    <th>Options</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {{#each images}}
-                                                <tr>
-                                                    <th scope="row">{{@index}}</th>
-                                                    <td>
-                                                        <strong>{{this.name}}</strong>
-                                                    </td>
-                                                    <td class="img-preview-container">
-                                                        <img src="{{this.path}}" class="img-preview" id="js-img-{{@index}}" alt="{{this.name}}">
-                                                    </td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-danger">Remove</button>
-                                                    </td>
-                                                </tr>
-                                                {{/each}}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="panel-footer">Panel Footer</div>
-                            </div>
+
+            <button style="display: none" class="js-collapse-trigger"></button>
+
+            <div class="js-galery-images-collapsible">
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Preview</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="js-galery-images-collapsible-body">
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

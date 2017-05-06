@@ -1,17 +1,20 @@
 const express = require('express');
 const path = require('path')
-var images = require('./data/images.json');
 const fs = require('fs');
+const fileExists = require('file-exists');
+const _ = require('lodash');
 var multer = require('multer');
 var upload = multer({ dest: '/tmp/' });
-const fileExists = require('file-exists');
+
+var images = require(`${__dirname}/data/images.json`);
+var ImageModel = require('./models/image')
 
 var router = express.Router();
 module.exports = router;
 
 router.get('/admin', function (req, res) {
     res.render('admin', {
-        images: images,
+        // images: images,
         layout: 'admin-area'
     });
 });
@@ -41,28 +44,57 @@ router.post('/add', upload.any(), function (req, res) {
             }
 
             console.log(`File ${fileName} was successfuly saved to: ${newPath}`);
+
+            // TODO(Domi): Change id to uuid
+            let name = fileName.replace(path.extname(fileName), "");
+            let url = `img/${file.originalname}`;
+
+            let image = new ImageModel(name, url);
+
+            images.push(image);
+
+            saveImages(images, res);
         });
     });
+});
 
-    images.push({
-        name: fileName.replace(path.extname(fileName), ""),
-        path: "img/" + file.originalname
-    });
+router.get('/remove', function (req, res) {
+    let image = _.find(images, x => x.Id == req.query.id);
 
-    fs.writeFile(`${__dirname}/data/images.json`, JSON.stringify(images), function (err) {
+    var serverPath = `${__dirname}/public/${image.Url}`;
+
+    if (!fileExists.sync(serverPath)) {
+        console.log(`File: ${path.basename(serverPath)} dosent exists!`);
+
+        return res.sendStatus('200');
+    }
+
+    let index = images.indexOf(image);
+    images.splice(index, 1);
+
+    fs.unlink(serverPath, function (err) {
         if (err) {
             res.sendStatus('500');
             return next();
         }
+        console.log(`${image.Url} is deleted`);
 
-        return res.sendStatus('200');
+        saveImages(images, res);
     });
 });
 
-router.post('/remove', function (req, res) {
-    // fs.unlink(item, function (err) {
-    //     if (err) throw err;
-    //     console.log(item + " deleted");
-    // });
-});
+router.get('/show', function (req, res) {
+    res.render('admin-show', {
+        images: images,
+        layout: false
+    });
+})
 
+function saveImages(_images, res) {
+    fs.writeFile(`${__dirname}/data/images.json`, JSON.stringify(_images), function (err) {
+        if (err) {
+            return res.sendStatus('500');
+        }
+        return res.sendStatus('200');
+    });
+}
