@@ -15,13 +15,20 @@ var auth = require('./auth');
 var router = express.Router();
 module.exports = router;
 
+var session;
+
 router.get('/admin', auth.isAuthenticated, function (req, res, next) {
+    session = req.session;
     res.render('admin', {
         layout: 'admin-area'
     });
 });
 
 router.post('/add', upload.any(), function (req, res, next) {
+    if (!session) {
+        return res.sendStatus('401');
+    }
+
     var file = req.files[0];
 
     var fileName = file.originalname;
@@ -60,6 +67,10 @@ router.post('/add', upload.any(), function (req, res, next) {
 });
 
 router.post('/remove', function (req, res) {
+    if (!session) {
+        return res.sendStatus('401');
+    }
+
     let image = _.find(images, x => x.Id == req.query.id);
 
     var serverPath = `${__dirname}/public/${image.Url}`;
