@@ -132,11 +132,23 @@
     <script src="js/contacts.js"></script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('#js-gallery-carousel')
                 .children()
                 .first()
                 .addClass('active');
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            var $certificateCarousel = $('#js-certificate-carousel');
+
+            $('.certificate').on('click', function (event) {
+                $certificateCarousel.attr('src',
+                    $(this).attr('src'));
+                $certificateCarousel.attr('alt',
+                    $(this).attr('alt'));
+            })
         })
     </script>
 </body>

@@ -37,7 +37,6 @@ router.post('/login', function (req, res) {
     }
 });
 
-
 router.get('/logout', function (req, res) {
     req.session.destroy(function () {
         console.log("user logged out.")
