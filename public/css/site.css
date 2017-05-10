@@ -65,11 +65,12 @@ h4 {
 
 /*----------Jumbotron----------*/
 .jumbotron {
-    padding: 0;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
 }
 
-.jumbotron {
-    margin-bottom: 0 !important;
+.jumbotron p {
+    margin-bottom: 10%;
 }
 
 .jumbotron-fluid {
@@ -188,46 +189,46 @@ div.form-group > span {
     color: #fff;
 }
 
-.info,
-.opening-time,
-.facebook {
+#info,
+#opening-time,
+#facebook {
     margin-top: 2%;
 }
 
-.info {
+#info {
     padding-left: 0;
     border: 1px solid #fff;
 }
 
-.info ul {
+#info ul {
     list-style: none;
     padding: 5% 3% 0;
 }
 
-.facebook > iframe {
+#facebook > iframe {
     height: 250px;
     width: 340px;
     border: none;
     overflow:hidden;
 }
 
-.opening-time {
+#opening-time {
     padding-top: 1%;
     font-size: 12px;
     border: 1px solid #fff;
     width: 200px;
 }
 
-    .opening-time dl {
+    #opening-time dl {
         margin: 5px;
         float: right;
     }
 
-        .opening-time dl:last-of-type {
+        #opening-time dl:last-of-type {
             margin-right: 40px;
         }
 
-.copyright {
+#copyright {
     width: 100%;
     font-size: 0.8em;
     text-align: center;
@@ -235,11 +236,11 @@ div.form-group > span {
 }
 
 /*----------Fix----------*/
-.header-fix{
+#header-fix{
     margin-top: 5%;
 }
 
-.hr-fix {
+#hr-fix {
     margin-top: 0;
     margin-bottom: 0;
 }
