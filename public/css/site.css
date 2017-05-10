@@ -22,7 +22,7 @@ main section:nth-child(odd),
 
 main section:nth-child(even),
 #main-navigation,
-#services .list-group-item {
+.services .list-group-item {
     background: #E951FF;
 }
 
@@ -64,7 +64,7 @@ h4 {
 }
 
 /*----------Jumbotron----------*/
-#jumbotron {
+.jumbotron {
     padding: 0;
 }
 
@@ -73,7 +73,7 @@ h4 {
 }
 
 .jumbotron-fluid {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/seventh-haircut.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/jumbotron/seventh-haircut.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -84,39 +84,39 @@ h4 {
 }
 
 /*----------About----------*/
-#about {
+.about {
     line-height: 30px;
 }
 
-#about p {
+.about p {
     text-align: justify;
 }
 
 /*----------Gallery----------*/
-#gallery {
+.gallery {
     width: 100%;
 }
-    #gallery .gallery-list {
+    .gallery .gallery-list {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
     }
 
-#gallery .previous-image img,
-#gallery .next-image img {
+.gallery .previous-image img,
+.gallery .next-image img {
     height: 250px;
 }
 
-#gallery .current-image img{
+.gallery .current-image img{
     max-height: 350px;
 }
 
 /*----------Services----------*/
-#services {
+.services {
     color: #fff;
 }
 
-    #services .list-group-item  {
+    .services .list-group-item  {
         text-align: center;
     }
 
@@ -134,7 +134,7 @@ h4 {
     width: 100%;
 }
 
-#collaborators .caption {
+.collaborators .caption {
     text-align: center;
 }
 
@@ -142,7 +142,6 @@ h4 {
     width: 50%;
     display: inline-block;
 }
-
 
 /*----------Contacts----------*/
 input[type="submit"] {
@@ -152,7 +151,7 @@ input[type="submit"] {
 }
 
 /*----------Map----------*/
-#map iframe {
+.map iframe {
     margin-top: 12px;
     height: 450px;
     width: 100%;
@@ -160,8 +159,8 @@ input[type="submit"] {
 }
 
 /*----------Contacts-Error----------*/
-#contact-form span.required-star,
-#contact-form .error {
+.contact-form span.required-star,
+.contact-form .error {
     color: #FF426C;
 }
 
@@ -189,46 +188,46 @@ div.form-group > span {
     color: #fff;
 }
 
-#info,
-#opening-time,
-#facebook {
+.info,
+.opening-time,
+.facebook {
     margin-top: 2%;
 }
 
-#info {
+.info {
     padding-left: 0;
     border: 1px solid #fff;
 }
 
-#info ul {
+.info ul {
     list-style: none;
     padding: 5% 3% 0;
 }
 
-#facebook > iframe {
+.facebook > iframe {
     height: 250px;
     width: 340px;
     border: none;
     overflow:hidden;
 }
 
-#opening-time {
+.opening-time {
     padding-top: 1%;
     font-size: 12px;
     border: 1px solid #fff;
     width: 200px;
 }
 
-    #opening-time dl {
+    .opening-time dl {
         margin: 5px;
         float: right;
     }
 
-        #opening-time dl:last-of-type {
+        .opening-time dl:last-of-type {
             margin-right: 40px;
         }
 
-#copyright {
+.copyright {
     width: 100%;
     font-size: 0.8em;
     text-align: center;

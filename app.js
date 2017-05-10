@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(session({ secret: "Keyboard Doge FTW" }));
 
 //Set up default view engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main-area' }));
+app.engine('handlebars', exphbs({ defaultLayout: 'home' }));
 
 //Set up views location
 app.set('views', './views');
@@ -29,7 +29,7 @@ app.use(express.static('node_modules/jquery-validation/dist'));
 app.use(express.static('node_modules/bootstrap/dist'));
 
 app.get('/', function (req, res) {
-    res.render('home', { images: require('./data/images.json') });
+    res.render('home/main', { images: require('./data/images.json') });
 });
 
 //TODO(Domi): Extract to helper function!

@@ -1,4 +1,4 @@
-<section id="jumbotron" class="js-jumbotron">
+<section class="jumbotron" id="js-jumbotron">
     <div class="jumbotron jumbotron-fluid">
         <div class="container-fluid text-center">
             <h1 class="display-3">Учебен център "Галиция"</h1>
@@ -7,7 +7,7 @@
     </div>
 </section>
 
-<section id="about" class="js-about">
+<section class="about" id="js-about">
     <h2>За нас</h2>
     <div class="container-fluid">
         <div class="row">
@@ -27,24 +27,24 @@
     </div>
 </section>
 
-<section id="gallery" class="js-gallery">
+<section id="js-gallery">
     <header>
         <h2>Галерия</h2>
     </header>
     <div class="container-fluid">
+        {{!--TODO(Domi): Replace invalid tag--}}
         <div id="main_area">
-            <!-- Slider -->
             <div class="row">
-                <div class="col-sm-6" id="slider-thumbs">
+                <div class="col-sm-6" id="js-slider-thumbs">
                     <!-- Bottom switcher of slider -->
-                    <ul class="hide-bullets">
-                        {{#each images}}
-                        <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-{{@index}}">
-                                <img class="gallery-left" src="{{this.Url}}" alt="{{this.Name}}">
-                            </a>
+
+                    <ul class="pagination">
+                        <li class="active">
+                            <a href="/show/20">1</a>
                         </li>
-                        {{/each}}
+                        <li>
+                            <a href="/show/40">2</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
@@ -80,7 +80,7 @@
     </div>
 </section>
 
-<section id="services" class="js-services">
+<section class="services" id="js-services">
     <header>
         <h2>Услуги</h2>
     </header>
@@ -109,7 +109,7 @@
     </div>
 </section>
 
-<section id="collaborators" class="js-collaborators">
+<section class="collaborators" id="js-collaborators">
     <header>
         <h2>Курсове</h2>
     </header>
@@ -117,7 +117,7 @@
         <div class="row">
             <div class="col-xs-offset-1 col-xs-6">
                 <div class="certificate-container">
-                     <img src="img/certificate.png" alt="Сертификат" id="js-certificate-carousel">
+                    <img src="img/certificates/certificate.png" alt="Сертификат" id="js-certificate-carousel">
                 </div>
             </div>
             <div class="col-xs-4">
@@ -126,10 +126,10 @@
                         <div>
                             <ul class="row list-inline text-center">
                                 <li class="col-xs-6">
-                                    <img src="img/certificate.png" alt="Сертификат" class="img-responsive img-rounded certificate" >
+                                    <img src="img/certificates/certificate.png" alt="Сертификат" class="img-responsive img-rounded certificate">
                                 </li>
                                 <li class="col-xs-6">
-                                    <img src="img/certificate-back.png" alt="Сертификат Гръб" class="img-responsive img-rounded certificate">
+                                    <img src="img/certificates/certificate-back.png" alt="Сертификат Гръб" class="img-responsive img-rounded certificate">
                                 </li>
                             </ul>
                         </div>
@@ -147,7 +147,7 @@
 
 </section>
 
-<section id="contacts" class="js-contacts">
+<section class="contacts" id="js-contacts">
     <header>
         <h2>Контакти</h2>
     </header>
@@ -204,7 +204,7 @@
     </form>
 </section>
 
-<section id="map" class="js-map">
+<section class="map" id="js-map">
     <header>
         <h2>Местоположение</h2>
     </header>

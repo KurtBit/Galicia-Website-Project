@@ -1,0 +1,9 @@
+<ul class="hide-bullets">
+    {{#each images}}
+    <li class="col-sm-3">
+        <a class="thumbnail" id="carousel-selector-{{@index}}">
+            <img class="gallery-left" src="{{this.Url}}" alt="{{this.Name}}">
+        </a>
+    </li>
+    {{/each}}
+</ul>

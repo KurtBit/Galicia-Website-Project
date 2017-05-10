@@ -3,7 +3,7 @@ $(document).ready(function () {
         let $self = $(this);
         let id = $(this).attr('js-img-id');
         $.ajax({
-            url: `/remove?id=${id}`,
+            url: `/admin/remove?id=${id}`,
             method: 'post',
             xhrFields: {
                 withCredentials: true

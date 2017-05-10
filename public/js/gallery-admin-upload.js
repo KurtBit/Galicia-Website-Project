@@ -41,7 +41,7 @@ $(document).ready(function () {
         $('.loader').toggle();
         $.ajax({
             type: 'post',
-            url: '/add',
+            url: '/admin/add',
             data: formData,
             cache: false,
             contentType: false,

@@ -15,16 +15,18 @@ var auth = require('./auth');
 var router = express.Router();
 module.exports = router;
 
+const AREA_NAME = 'admin';
+
 var session;
 
-router.get('/admin', auth.isAuthenticated, function (req, res, next) {
+router.get(`/${AREA_NAME}`, auth.isAuthenticated, function (req, res, next) {
     session = req.session;
-    res.render('admin', {
-        layout: 'admin-area'
+    res.render('admin/main', {
+        layout: 'admin'
     });
 });
 
-router.post('/add', upload.any(), function (req, res, next) {
+router.post(`/${AREA_NAME}/add`, upload.any(), function (req, res, next) {
     if (!session) {
         return res.sendStatus('401');
     }
@@ -66,7 +68,7 @@ router.post('/add', upload.any(), function (req, res, next) {
     });
 });
 
-router.post('/remove', function (req, res) {
+router.post(`/${AREA_NAME}/remove`, function (req, res) {
     if (!session) {
         return res.sendStatus('401');
     }
@@ -96,8 +98,8 @@ router.post('/remove', function (req, res) {
     });
 });
 
-router.get('/show', function (req, res) {
-    res.render('admin-show', {
+router.get(`/${AREA_NAME}/show`, function (req, res) {
+    res.render('admin/show', {
         images: images,
         layout: false
     });

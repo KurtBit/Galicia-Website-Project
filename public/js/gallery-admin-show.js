@@ -2,7 +2,7 @@ $(document).ready(function () {
     if ($('.js-collapse-trigger').length) {
         $('.js-collapse-trigger').on('click', function () {
             $.ajax({
-                url: '/show',
+                url: '/admin/show',
                 method: 'get',
                 xhrFields: {
                     withCredentials: true

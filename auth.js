@@ -9,13 +9,13 @@ module.exports = {
     isAuthenticated
 };
 
-router.get('/login', function (req, res) {
-    res.render('login', { layout: 'admin-area' });
+router.get('/auth/login', function (req, res) {
+    res.render('auth/login', { layout: 'admin' });
 });
 
-router.post('/login', function (req, res) {
+router.post('/auth/login', function (req, res) {
     if (!req.body.username || !req.body.password) {
-        res.render('login',
+        res.render('auth/login',
             { message: "Please enter both id and password" });
     }
 
@@ -32,16 +32,17 @@ router.post('/login', function (req, res) {
     if (isLoggedIn) {
         res.redirect('/admin');
     } else {
-        res.render('login',
+        // TODO(Domi): Render error message!
+        res.render('auth/login',
             { message: "Invalid credentials!" });
     }
 });
 
-router.get('/logout', function (req, res) {
+router.get('/auth/logout', function (req, res) {
     req.session.destroy(function () {
         console.log("user logged out.")
     });
-    res.redirect('/login');
+    res.redirect('auth/login');
 });
 
 function isAuthenticated(req, res, next) {
@@ -50,6 +51,6 @@ function isAuthenticated(req, res, next) {
     } else {
         console.log("Not logged in!");
 
-        res.redirect("/login");
+        res.redirect("auth/login");
     }
 }
