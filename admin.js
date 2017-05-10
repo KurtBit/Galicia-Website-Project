@@ -108,6 +108,7 @@ function saveImages(_images, res) {
         if (err) {
             return res.sendStatus('500');
         }
+
         return res.sendStatus('200');
     });
 }

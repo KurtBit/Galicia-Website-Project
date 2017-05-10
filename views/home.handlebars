@@ -40,7 +40,7 @@
                     <ul class="hide-bullets">
                         {{#each images}}
                         <li class="col-sm-3">
-                            <a class="thumbnail" id="carousel-selector-0">
+                            <a class="thumbnail" id="carousel-selector-{{@index}}">
                                 <img class="gallery-left" src="{{this.Url}}" alt="{{this.Name}}">
                             </a>
                         </li>
@@ -54,65 +54,12 @@
                             <div class="col-sm-12" id="carousel-bounding-box">
                                 <div class="carousel slide" id="myCarousel">
                                     <!-- Carousel items -->
-                                    <div class="carousel-inner">
-                                        <div class="active item" data-slide-number="0">
-                                            <img src="img/first-haircut.jpg">
+                                    <div class="carousel-inner" id="js-gallery-carousel">
+                                        {{#each images}}
+                                        <div class="item" data-slide-number="{{@index}}">
+                                            <img src="{{this.Url}}" alt="{{this.Name}}">
                                         </div>
-
-                                        <div class="item" data-slide-number="1">
-                                            <img src="img/second-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="2">
-                                            <img src="img/third-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="3">
-                                            <img src="img/fourth-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="4">
-                                            <img src="img/fifth-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="5">
-                                            <img src="img/sixth-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="6">
-                                            <img src="img/seventh-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="7">
-                                            <img src="img/eight-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="8">
-                                            <img src="img/ninth-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="9">
-                                            <img src="img/tenth-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="10">
-                                            <img src="img/eleventh-haircut.jpg">
-                                        </div>
-
-                                        <div class="item" data-slide-number="11">
-                                            <img src="http://placehold.it/470x480&text=11"></div>
-
-                                        <div class="item" data-slide-number="12">
-                                            <img src="http://placehold.it/470x480&text=12"></div>
-
-                                        <div class="item" data-slide-number="13">
-                                            <img src="http://placehold.it/470x480&text=13"></div>
-
-                                        <div class="item" data-slide-number="14">
-                                            <img src="http://placehold.it/470x480&text=14"></div>
-
-                                        <div class="item" data-slide-number="15">
-                                            <img src="http://placehold.it/470x480&text=15"></div>
+                                        {{/each}}
                                     </div>
                                     <!-- Carousel nav -->
                                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
