@@ -1,1 +1,1 @@
-ImageImporter.Client.exe -source "../public/img/gallery" -target "../data/images.json"
+ImageImporter.Client.exe -dir "img" -source "../public/img/gallery" -target "../data/images.json"
