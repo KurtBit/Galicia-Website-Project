@@ -32,6 +32,10 @@ app.get('/', function (req, res) {
     res.render('home/main', { images: require('./data/images.json') });
 });
 
+app.get('/show', function(req, res){
+    
+})
+
 //TODO(Domi): Extract to helper function!
 var authRouter = require('./auth');
 app.use(authRouter.router);
