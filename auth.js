@@ -9,11 +9,11 @@ module.exports = {
     isAuthenticated
 };
 
-router.get('/auth/login', function (req, res) {
+router.get('/login', function (req, res) {
     res.render('auth/login', { layout: false });
 });
 
-router.post('/auth/login', function (req, res) {
+router.post('/login', function (req, res) {
     if (!req.body.username || !req.body.password) {
         res.render('auth/login',
             { message: "Please enter both id and password", layout: false });
@@ -38,7 +38,7 @@ router.post('/auth/login', function (req, res) {
     }
 });
 
-router.get('/auth/logout', function (req, res) {
+router.get('/logout', function (req, res) {
     req.session.destroy(function () {
         console.log("user logged out.")
     });

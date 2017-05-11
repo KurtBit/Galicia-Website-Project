@@ -19,14 +19,14 @@ const AREA_NAME = 'admin';
 
 var session;
 
-router.get(`/${AREA_NAME}`, auth.isAuthenticated, function (req, res, next) {
+router.get('/', auth.isAuthenticated, function (req, res, next) {
     session = req.session;
     res.render('admin/main', {
         layout: 'admin'
     });
 });
 
-router.post(`/${AREA_NAME}/add`, upload.any(), function (req, res, next) {
+router.post('/add', upload.any(), function (req, res, next) {
     if (!session) {
         return res.sendStatus('401');
     }
@@ -68,7 +68,8 @@ router.post(`/${AREA_NAME}/add`, upload.any(), function (req, res, next) {
     });
 });
 
-router.post(`/${AREA_NAME}/remove`, auth.isAuthenticated, function (req, res) {
+// TODO(Domi): Change query to param!
+router.post('/remove', auth.isAuthenticated, function (req, res) {
 
     let image = _.find(images, x => x.Id == req.query.id);
 
@@ -95,7 +96,7 @@ router.post(`/${AREA_NAME}/remove`, auth.isAuthenticated, function (req, res) {
     });
 });
 
-router.get(`/${AREA_NAME}/show`, auth.isAuthenticated, function (req, res) {
+router.get('/show', auth.isAuthenticated, function (req, res) {
     res.render('admin/show', {
         images: images,
         layout: false
