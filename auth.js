@@ -10,13 +10,13 @@ module.exports = {
 };
 
 router.get('/auth/login', function (req, res) {
-    res.render('auth/login', { layout: 'admin' });
+    res.render('auth/login', { layout: false });
 });
 
 router.post('/auth/login', function (req, res) {
     if (!req.body.username || !req.body.password) {
         res.render('auth/login',
-            { message: "Please enter both id and password" });
+            { message: "Please enter both id and password", layout: false });
     }
 
     var isLoggedIn = false;
@@ -34,7 +34,7 @@ router.post('/auth/login', function (req, res) {
     } else {
         // TODO(Domi): Render error message!
         res.render('auth/login',
-            { message: "Invalid credentials!" });
+            { message: "Invalid credentials!", layout: false });
     }
 });
 
