@@ -68,9 +68,9 @@ router.post(`/${AREA_NAME}/add`, upload.any(), function (req, res, next) {
     });
 });
 
-router.post(`/${AREA_NAME}/remove`,auth.isAuthenticated, function (req, res) {
+router.post(`/${AREA_NAME}/remove`, auth.isAuthenticated, function (req, res) {
 
-      let image = _.find(images, x => x.Id == req.query.id);
+    let image = _.find(images, x => x.Id == req.query.id);
 
     var serverPath = `${__dirname}/public/${image.Url}`;
 
@@ -95,7 +95,7 @@ router.post(`/${AREA_NAME}/remove`,auth.isAuthenticated, function (req, res) {
     });
 });
 
-router.get(`/${AREA_NAME}/show`,auth.isAuthenticated, function (req, res) {
+router.get(`/${AREA_NAME}/show`, auth.isAuthenticated, function (req, res) {
     res.render('admin/show', {
         images: images,
         layout: false
