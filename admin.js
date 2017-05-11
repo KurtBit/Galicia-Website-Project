@@ -26,7 +26,7 @@ router.get('/', auth.isAuthenticated, function (req, res, next) {
     });
 });
 
-router.post('/add', upload.any(), function (req, res, next) {
+router.post('/add', [auth.isAuthenticated, upload.any()], function (req, res, next) {
     if (!session) {
         return res.sendStatus('401');
     }

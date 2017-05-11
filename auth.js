@@ -9,34 +9,34 @@ module.exports = {
     isAuthenticated
 };
 
-router.get('/login', function (req, res) {
-    res.render('auth/login', { layout: false });
-});
+router.route('/login')
+    .get(function (req, res) {
+        res.render('auth/login', { layout: false });
+    })
+    .post(function (req, res) {
+        if (!req.body.username || !req.body.password) {
+            res.render('auth/login',
+                { message: "Please enter both id and password", layout: false });
+        }
 
-router.post('/login', function (req, res) {
-    if (!req.body.username || !req.body.password) {
-        res.render('auth/login',
-            { message: "Please enter both id and password", layout: false });
-    }
+        var isLoggedIn = false;
+        usersDb.filter(function (user) {
+            if (user.name === req.body.username &&
+                user.password === req.body.password) {
 
-    var isLoggedIn = false;
-    usersDb.filter(function (user) {
-        if (user.name === req.body.username &&
-            user.password === req.body.password) {
+                req.session.user = user;
+                isLoggedIn = true;
+            }
+        });
 
-            req.session.user = user;
-            isLoggedIn = true;
+        if (isLoggedIn) {
+            res.redirect('/admin');
+        } else {
+            // TODO(Domi): Render error message!
+            res.render('auth/login',
+                { message: "Invalid credentials!", layout: false });
         }
     });
-
-    if (isLoggedIn) {
-        res.redirect('/admin');
-    } else {
-        // TODO(Domi): Render error message!
-        res.render('auth/login',
-            { message: "Invalid credentials!", layout: false });
-    }
-});
 
 router.get('/logout', function (req, res) {
     req.session.destroy(function () {
