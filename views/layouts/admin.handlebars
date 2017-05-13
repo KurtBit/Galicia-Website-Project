@@ -42,6 +42,31 @@
     <script src="js/gallery-admin-show.js"></script>
     <script src="js/gallery-admin-upload.js"></script>
     <script src="js/gallery-admin-remove.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#search').on('input', function () {
+                var $self = $(this);
+                var url = 'admin/search\/' + $self.text();
+                console.log('Search!!!');
+                $.ajax({
+                    url: url,
+                    method: 'get',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function (data) {
+                        {
+                            console.log('sending...');
+                            $('.js-galery-images-collapsible-body').html('');
+
+                            $('.js-galery-images-collapsible-body').append(data).show('slow');
+                        }
+                    }
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>

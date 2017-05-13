@@ -103,6 +103,15 @@ router.get('/show', auth.isAuthenticated, function (req, res) {
     });
 })
 
+router.get('/search', auth.isAuthenticated, function(req, res) {
+    // var filteredImages = _include(images, req.body);
+    console.log('Hello search!');
+    res.render('admin/search', {
+        // images: filteredImages,
+        layout: false
+    });
+});
+
 function saveImages(_images, res) {
     fs.writeFile(`${__dirname}/data/images.json`, JSON.stringify(_images), function (err) {
         if (err) {
