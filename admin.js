@@ -103,13 +103,16 @@ router.get('/show', auth.isAuthenticated, function (req, res) {
     });
 })
 
-router.get('/search', auth.isAuthenticated, function(req, res) {
-    // var filteredImages = _include(images, req.body);
-    console.log('Hello search!');
-    res.render('admin/search', {
-        // images: filteredImages,
-        layout: false
+router.get('/search/:text', auth.isAuthenticated, function(req, res, next) {
+    var pattern = req.params.text;
+    var filteredImages = _.filter(images, function(item) {
+        return (item.Name.indexOf(pattern) != -1);
     });
+
+    res.render('admin/show', {
+        images: filteredImages,
+        layout: false
+    })
 });
 
 function saveImages(_images, res) {

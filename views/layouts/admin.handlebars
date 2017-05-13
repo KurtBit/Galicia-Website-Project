@@ -46,24 +46,17 @@
     <script>
         $(document).ready(function () {
             $('#search').on('input', function () {
-                var $self = $(this);
-                var url = 'admin/search\/' + $self.text();
-                console.log('Search!!!');
-                $.ajax({
-                    url: url,
-                    method: 'get',
-                    xhrFields: {
-                        withCredentials: true
-                    },
-                    success: function (data) {
-                        {
-                            console.log('sending...');
+                if ($(this).val()) {
+                    $.ajax({
+                        url: 'admin/search/' + $(this).val(),
+                        success: function (data) {
+                            console.log(data);
                             $('.js-galery-images-collapsible-body').html('');
 
                             $('.js-galery-images-collapsible-body').append(data).show('slow');
                         }
-                    }
-                })
+                    })
+                }
             })
         })
     </script>
