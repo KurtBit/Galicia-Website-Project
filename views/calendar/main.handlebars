@@ -63,7 +63,7 @@
                     <div class="container-fluid">
                         <div class="row">
                         <div class="col-xs-12">
-                            <form>
+                            <form class="js-appointment-form">
                                 <div class="form-group">
                                     <label for="Name">Name</label>
                                     <input type="name" class="form-control" id="Name" placeholder="Name">
@@ -111,6 +111,15 @@
     <script>
         $("[class*='js-cell-']").on('click', function () {
             $('#input-modal').modal();
+        })
+    </script>
+
+    <script>
+        $('.js-appointment-form').on('submit', function(event){
+            event.preventDefault();
+
+            console.log($(this).serializeArray());
+            console.log(event);
         })
     </script>
 </body>

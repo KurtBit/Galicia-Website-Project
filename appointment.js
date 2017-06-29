@@ -7,4 +7,4 @@ class Appointment {
     }
 }
 
-module.exports = appointment;
+module.exports = Appointment;
