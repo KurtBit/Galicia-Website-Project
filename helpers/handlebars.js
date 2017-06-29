@@ -1,7 +1,9 @@
 var register = function(Handlebars) {
   var helpers = {
     // put all of your helpers inside this object
-   
+    onNthElement: function(index, element){
+        return parseInt(index) % parseInt(element) === 0;
+    }
   };
 
   if (Handlebars && typeof Handlebars.registerHelper === "function") {
