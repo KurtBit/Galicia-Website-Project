@@ -1,6 +1,7 @@
 const express = require('express');
 const _ = require('lodash');
 const mongo = require('mongodb');
+const Appointment = require('./appointment');
 
 var router = express.Router();
 
@@ -19,31 +20,33 @@ router.get('/', function (req, res) {
     let date = new Date();
     let maxDaysInMonth = getMaxDaysInMonth(date.getMonth(), date.getMonth());
 
-    let appointment = {
-        name: 'Ivan',
-        date: '01.02.2016',
-        comment: 'Бърза Прическа',
-        time: '13:00'
-    }
+    let calendarCells = _.range(1, maxDaysInMonth, 1);
 
-    mongo.connect(url, function(err, db){
-        if(!db){
+    res.render('calendar/main', {
+        layout: false,
+        cells: calendarCells
+    });
+})
+
+router.post('\add', function (req, res) {
+    let appointment = new Appointment('Ivan', '01.02.2016', 'Бърза Прическа', '13:00');
+
+    mongo.connect(url, function (err, db) {
+        if (!db) {
             console.log(err);
             return;
         }
-        db.collection(db_appointments_table_name).insertOne(appointment, function(err, result){
-            if(err){
-               console.log(err);
+
+        db.collection(db_appointments_table_name).insertOne(appointment, function (err, result) {
+            if (err) {
+                console.log(err);
             }
 
             db.close();
         })
     })
 
-    let calendarCells = _.range(1, maxDaysInMonth, 1);
 
-    res.render('calendar/main', { layout: false,
-         cells: calendarCells });
 })
 
 module.exports = router;
