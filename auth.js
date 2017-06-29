@@ -1,5 +1,4 @@
 const express = require('express');
-const passport = require('passport');
 
 var usersDb = require('./data/users.json')
 

@@ -18,7 +18,11 @@ app.use(cookieParser());
 app.use(session({ secret: "Keyboard Doge FTW" }));
 
 //Set up default view engine
-app.engine('handlebars', exphbs({ defaultLayout: 'home' }));
+app.engine('handlebars',
+    exphbs({
+        defaultLayout: 'home',
+        helpers: require('./helpers/handlebars').helpers
+    }));
 
 //Set up views location
 app.set('views', './views');
@@ -36,6 +40,7 @@ app.use('/', require('./home'));
 app.use('/auth', require('./auth').router);
 
 app.use('/admin', require('./admin'));
+app.use('/calendar', require('./calendar'));
 
 // Configure server
 const PORT = 3000;

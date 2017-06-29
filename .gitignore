@@ -4,3 +4,4 @@ Thumbs.db
 *.png
 *.PNG
 /data/images.json
+/npm-debug.log
