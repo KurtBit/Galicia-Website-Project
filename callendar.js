@@ -29,8 +29,13 @@ router.get('/', function (req, res) {
     });
 })
 
-router.post('\add', function (req, res) {
-    let appointment = new Appointment('Ivan', '01.02.2016', 'Бърза Прическа', '13:00');
+router.post('/add', function (req, res) {
+    let appointment = new Appointment(
+    req.body['name'],
+    req.body['date'],
+    req.body['comment'],
+    req.body['time'],
+    req.body['email']);
 
     mongo.connect(url, function (err, db) {
         if (!db) {
@@ -42,12 +47,9 @@ router.post('\add', function (req, res) {
             if (err) {
                 console.log(err);
             }
-
             db.close();
         })
     })
-
-
 })
 
 module.exports = router;
