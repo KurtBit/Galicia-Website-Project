@@ -18,6 +18,15 @@ function getMaxDaysInMonth(month, year) {
 }
 
 router.get('/', function (req, res) {
+    mongo.connect(url, function(err, db){
+        if (!db) {
+            console.log(err);
+            return;
+        }
+    })
+
+    // TODO(Domi): Query Database
+    
     let date = new Date();
     let maxDaysInMonth = getMaxDaysInMonth(date.getMonth(), date.getMonth());
 

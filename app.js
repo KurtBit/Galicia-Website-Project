@@ -40,7 +40,7 @@ app.use('/', require('./home'));
 app.use('/auth', require('./auth').router);
 
 app.use('/admin', require('./admin'));
-app.use('/callendar', require('./callendar'));
+app.use('/calendar', require('./calendar'));
 
 // Configure server
 const PORT = 3000;
