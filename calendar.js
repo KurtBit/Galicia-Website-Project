@@ -8,6 +8,7 @@ var router = express.Router();
 // TODO(Domi): Create config file and store user and password in there!
 const user = 'website';
 const password = 'shamS6rmWM';
+
 const db_appointments_table_name = 'appointments';
 
 const url = `mongodb://${user}:${password}@ds064649.mlab.com:64649/galiciq_cms_db`
