@@ -112,6 +112,13 @@ h4 {
     max-height: 350px;
 }
 
+#myCarousel {
+    max-height: 300px;
+}
+
+#myCarousel .item img{
+    height: 300px;
+}
 /*----------Services----------*/
 .services {
     color: #fff;
