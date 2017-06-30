@@ -169,6 +169,12 @@
                         $('li.active').removeClass('active');
 
                         $self.parent().addClass('active');
+
+                        $('#myCarousel')
+                            .find('img')
+                            .css('max-height',
+                                $('#js-slider-thumbs')
+                                    .height())
                     }
                 })
             })
