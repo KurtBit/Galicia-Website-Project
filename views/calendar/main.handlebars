@@ -23,27 +23,33 @@
 <body>
     <div class="container-fluid">
         <div class="js-calendar">
-            {{#each cells}} {{#if (onNthElement @index 7)}} {{#if @index}}
-        </div>
-        {{/if}}
+            {{#each appointmentDates}}
+                {{#if (onNthElement @index 7)}}
+                    {{#if @index}}
+                        </div>
+                    {{/if}}
         <div class="row seven-cols">
             {{/if}}
             <div class="col-xs-1">
-                <div class="js-cell-{{math @index 1 '+'}}" js-date="{{math @index 1 '+'}}.02.2017">
+                <div class="calendar-cell" js-date="{{this.date}}">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <h3>{{math @index 1 '+'}}.02.2017</h3>
-                            <h5 class="list-group-item-heading">
-                                13:00 - 15:00
-                            </h5>
-                            <p class="list-group-item-text">
-                                Подстригване на степени
-                            </p>
+                            <h3>{{this.date}}</h3>
+                            {{#each this.appointments}}
+                            <div class="appointment">
+                                <h5 class="list-group-item-heading">
+                                    {{this.time}}
+                                </h5>
+                                <p class="list-group-item-text">
+                                   {{this.comment}}
+                                </p>
+                            </div>
+                            {{/each}}
                         </li>
                     </ul>
                 </div>
             </div>
-             {{/each}}
+            {{/each}}
         </div>
     </div>
 
@@ -104,7 +110,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-        $("[class*='js-cell-']").on('click', function () {
+        $(".calendar-cell").on('click', function () {
             $('#input-modal').modal();
 
             $("#input-modal")

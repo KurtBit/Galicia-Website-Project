@@ -2,6 +2,7 @@ const express = require('express');
 const _ = require('lodash');
 const mongo = require('mongodb');
 const Appointment = require('./appointment');
+const moment = require('moment');
 
 var router = express.Router();
 
@@ -14,13 +15,22 @@ const tbl_appointments = 'appointments';
 const url = `mongodb://${user}:${password}@ds064649.mlab.com:64649/galiciq_cms_db`
 
 function getMaxDaysInMonth(month, year) {
-    return (new Date(month, year, 0).getDate());
+    let date = new Date(year, (month), 0);
+
+    return (date.getDate());
 }
 
 function toIsoDate(date) {
     var dateParts = date.split('.');
 
-    var parsedDate = `${dateParts[1]}.${dateParts[0]}.${dateParts[2]}`;
+    if (dateParts[0].length == 1) {
+        dateParts[0] = ('0' + dateParts[0]);
+    }
+    if (dateParts[1].length == 1) {
+        dateParts[1] = ('0' + dateParts[1]);
+    }
+
+    var parsedDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
 
     var output = new Date(parsedDate);
 
@@ -34,28 +44,37 @@ router.get('/', function (req, res) {
             return;
         }
         let date = new Date();
-        const month = date.getMonth();
+        const month = 2;
         const year = date.getFullYear();
 
         let maxDaysInMonth = getMaxDaysInMonth(month, year);
 
         db.collection(tbl_appointments)
             .find({},
-                function (err, result) {
-                    result.toArray().then(
-                        (result) => {
-                            let calendarCells = _.range(1, maxDaysInMonth, 1);
-                        
-                            res.render('calendar/main', {
-                                layout: false,
-                                cells: calendarCells,
-                                appointments: _.find(result, (x) => {
-                                    toIsoDate(x.date).getMonth() === month
+            function (err, result) {
+                result.toArray().then(
+                    (result) => {
+                        let monthAppointments = _.filter(result, (x) => {
+                            return (toIsoDate(x.date).getMonth() + 1) === month
+                        });
+
+                        let appointmentDates = [];
+                        for (let i = 1; i <= maxDaysInMonth; i += 1) {
+                            appointmentDates.push({
+                                date: moment(toIsoDate(`${i}.${month}.${year}`)).format('DD.MM.YYYY'),
+                                appointments: _.filter(monthAppointments, (x) => {
+                                    return toIsoDate(x.date).getDate() === i
                                 })
-                            });
+                            })
                         }
-                    )
-                })
+
+                        res.render('calendar/main', {
+                            layout: false,
+                            appointmentDates: appointmentDates
+                        });
+                    }
+                )
+            })
     })
 })
 
