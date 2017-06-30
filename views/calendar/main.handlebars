@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/site.css" type="text/css">
+    <link rel="stylesheet" href="css/calendar.css" type="text/css">
     <style>
         [class*='js-cell-'] {
             border: 1px solid black;
@@ -26,11 +27,12 @@
         </div>
         {{/if}}
         <div class="row">
-            {{else}}
+            {{/if}}
             <div class="col-xs-2">
-                <div class="js-cell-{{@index}}" js-date="{{@index}}.02.2017">
+                <div class="js-cell-{{math @index 1 '+'}}" js-date="{{math @index 1 '+'}}.02.2017">
                     <ul class="list-group">
                         <li class="list-group-item">
+                            <h3>{{math @index 1 '+'}}.02.2017</h3>
                             <h5 class="list-group-item-heading">
                                 13:00 - 15:00
                             </h5>
@@ -41,7 +43,7 @@
                     </ul>
                 </div>
             </div>
-            {{/if}} {{/each}}
+             {{/each}}
         </div>
     </div>
 
