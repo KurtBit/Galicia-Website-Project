@@ -21,32 +21,67 @@
 </head>
 
 <body>
+    <!-- Calendar -->
     <div class="container-fluid">
-        <div class="js-calendar">
-            {{#each appointmentDates}}
-                {{#if (onNthElement @index 7)}}
-                    {{#if @index}}
+        <div class="row">
+            <div class="col-xs-12 text-center calendar-month">
+                <h1>Февруари 2017</h1>
+            </div>
+            <div class="col-xs-offset-3 col-xs-6">
+                <hr>
+            </div>
+        </div>
+        <div class="row days-row">
+            <div class="col-xs-12">
+                <ul class="text-days">
+                    <div class="row seven-cols">
+                        <div class="col-xs-1">
+                            <li>Понеделник</li>
                         </div>
-                    {{/if}}
+                        <div class="col-xs-1">
+                            <li>Вторник</li>
+                        </div>
+                        <div class="col-xs-1">
+                            <li>Сряда</li>
+                        </div>
+                        <div class="col-xs-1">
+                            <li>Четвъртък</li>
+                        </div>
+                        <div class="col-xs-1">
+                            <li>Петък</li>
+                        </div>
+                        <div class="col-xs-1">
+                            <li>Събота</li>
+                        </div>
+                        <div class="col-xs-1">
+                            <li>Неделя</li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="js-calendar">
+            {{#each appointmentDates}} {{#if (onNthElement @index 7)}} {{#if @index}}
+        </div>
+        {{/if}}
         <div class="row seven-cols">
             {{/if}}
-            <div class="col-xs-1">
+            <div class="col-xs-1 cell">
                 <div class="calendar-cell" js-date="{{this.date}}">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h3>{{this.date}}</h3>
-                            {{#each this.appointments}}
-                            <div class="appointment">
-                                <h5 class="list-group-item-heading">
-                                    {{this.time}}
-                                </h5>
-                                <p class="list-group-item-text">
-                                   {{this.comment}}
-                                </p>
-                            </div>
-                            {{/each}}
-                        </li>
-                    </ul>
+                    <div class="day-cell">
+                        <h5>{{this.date}}</h5>
+                        {{#each this.appointments}}
+                        <div class="appointment">
+                            <span class="label label-primary">
+                                {{this.time}}
+                            </span>
+                            <span>
+                                {{this.comment}}
+                            </span>
+                        </div>
+                        <hr>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
             {{/each}}
@@ -79,9 +114,17 @@
                                     <div class="form-group">
                                         <label for="Inputselect">Choose appointment time</label>
                                         <select class="form-control">
-                                            <option>13:00</option>
-                                            <option>12:00</option>
+                                            <option>09:00</option>
+                                            <option>10:00</option>
                                             <option>11:00</option>
+                                            <option>12:00</option>
+                                            <option>13:00</option>
+                                            <option>14:00</option>
+                                            <option>15:00</option>
+                                            <option>16:00</option>
+                                            <option>17:00</option>
+                                            <option>18:00</option>
+                                            <option>19:00</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

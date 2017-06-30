@@ -2,9 +2,54 @@
 #FFA1B0 - bright pink
 #136eb4 - blue
 #FF00FF - magenta
-#E951FF - light magenta*/
+#E951FF - light magenta
+blueviolet
+*/
 
-@media (min-width: 768px) {
+.calendar-month {
+    margin-top: 3%;
+}
+
+.col-xs-offset-3 > hr {
+    border-color: #FF00FF;
+}
+
+.cell {
+    border: 1px solid #000;
+}
+
+.days-row {
+    border-bottom: 1px solid #000;
+}
+
+.text-days {
+    list-style: none;
+    padding: 0;
+}
+
+.text-days > div {
+    text-align: center;
+}
+.text-days li {
+    display: inline-block;
+    font-size: 2rem;
+    margin-top: 5%;
+}
+
+.seven-cols .day-cell {
+    height: 100px;
+}
+
+.appointment span:first-child {
+    margin-right: 5%;
+}
+
+.day-cell hr{
+    margin: 1% 0 0 0;
+    border-color: #d9d9d9;
+}
+
+@media (min-width: 368px) {
     .seven-cols .col-xs-1,
     .seven-cols .col-sm-1,
     .seven-cols .col-md-1,
