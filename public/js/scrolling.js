@@ -18,14 +18,10 @@ $(document).ready(function () {
     })
 
     $('#bs-example-navbar-collapse-1 > ul > li:nth-child(5) > a').on('click', function() {
-        $('html body').animate({scrollTop: $('#js-collaborators').offset().top - PADDING}, 1000);
-    })
-
-    $('#bs-example-navbar-collapse-1 > ul > li:nth-child(6) > a').on('click', function() {
         $('html body').animate({scrollTop: $('#js-contacts').offset().top - PADDING}, 1000);
     })
 
-    $('#bs-example-navbar-collapse-1 > ul > li:nth-child(7) > a').on('click', function() {
+    $('#bs-example-navbar-collapse-1 > ul > li:nth-child(6) > a').on('click', function() {
         $('html body').animate({scrollTop: $('#js-map').offset().top - PADDING}, 1000);
     })
 

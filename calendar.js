@@ -37,15 +37,15 @@ function toIsoDate(date) {
     return output;
 }
 
-router.get('/', function (req, res) {
+router.get('/:month/:year', function (req, res) {
     mongo.connect(url, function (err, db) {
         if (!db) {
             console.log(err);
             return;
         }
         let date = new Date();
-        const month = 2;
-        const year = date.getFullYear();
+        const month = req.params.month;
+        const year = req.params.year;
 
         let maxDaysInMonth = getMaxDaysInMonth(month, year);
 
