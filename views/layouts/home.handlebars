@@ -128,62 +128,32 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script src="js/scrolling.js"></script>
-    <script src="js/gallery.js"></script>
     <script src="js/contacts.js"></script>
+    <script src="js/certificates.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('#js-gallery-carousel')
-                .children()
-                .first()
-                .addClass('active');
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
-            var $certificateCarousel = $('#js-certificate-carousel');
-
-            $('.certificate').on('click', function (event) {
-                $certificateCarousel.attr('src',
-                    $(this).attr('src'));
-                $certificateCarousel.attr('alt',
-                    $(this).attr('alt'));
-            })
-        })
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $('#js-pagination').on('click', 'a', function () {
-                var $self = $(this);
-
-                var url = '\show\/' + $self.text();
-                $.ajax({
-                    url: url,
-                    success: function (data) {
-                        var $container = $('#js-pagination-container');
-                        $container.html('');
-
-                        $container.append(data);
-
-                        $('li.active').removeClass('active');
-
-                        $self.parent().addClass('active');
-
-                        $('#myCarousel')
-                            .find('img')
-                            .css('max-height',
-                                $('#js-slider-thumbs')
-                                    .height())
-                    }
-                })
-            })
-        })
-    </script>
+    <script src="js/gallery/init.js"></script>
+    <script src="js/gallery/gallery.js"></script>
+    <script src="js/gallery/pagination.js"></script>
 
     <script>
         $(document).ready(function () {
             $('#js-pagination li:first-child a').trigger('click');
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#js-pagination-container').on('click', 'a', function () {
+                let $this = $(this);
+
+                let index = $this.attr('id')
+                    .split('-')
+                    .pop();
+
+                $('.active').removeClass('active');
+
+                $(`[data-slide-number=${index}]`).addClass('active');
+            });
         })
     </script>
 </body>
