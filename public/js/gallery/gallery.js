@@ -19,5 +19,10 @@ $(document).ready(function () {
     $('#myCarousel').on('slid.bs.carousel', function (e) {
         var id = $('.item.active').data('slide-number');
         $('#carousel-text').html($('#slide-content-' + id).html());
+
+        let maxHeight = $('#js-slider-thumbs > div.row').height();
+        
+        $('.active > img')
+            .css('max-height', maxHeight);
     });
 });

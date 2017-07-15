@@ -36,15 +36,19 @@
         <div id="main_area">
             <div class="row">
                 <div class="col-sm-6" id="js-slider-thumbs">
-                    <div id="js-pagination-container">
+                    <div class="row">
+                        <div id="js-pagination-container">
+                        </div>
                     </div>
-                    <ul class="pagination" id="js-pagination">
-                        {{#each pages}}
-                        <li>
-                            <a>{{this}}</a>
-                        </li>
-                        {{/each}}
-                    </ul>
+                    <div class="row">
+                        <ul class="pagination" id="js-pagination">
+                            {{#each pages}}
+                            <li>
+                                <a>{{this}}</a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="col-sm-12" id="slider">
