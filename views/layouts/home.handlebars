@@ -132,28 +132,13 @@
     <script src="js/certificates.js"></script>
 
     <script src="js/gallery/init.js"></script>
+    <script src="js/gallery/update.js"></script>
     <script src="js/gallery/gallery.js"></script>
     <script src="js/gallery/pagination.js"></script>
 
     <script>
         $(document).ready(function () {
             $('#js-pagination li:first-child a').trigger('click');
-        })
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $('#js-pagination-container').on('click', 'a', function () {
-                let $this = $(this);
-
-                let index = $this.attr('id')
-                    .split('-')
-                    .pop();
-
-                $('.active').removeClass('active');
-
-                $(`[data-slide-number=${index}]`).addClass('active');
-            });
         })
     </script>
 </body>
