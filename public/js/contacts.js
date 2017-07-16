@@ -23,7 +23,9 @@ $(document).ready(function () {
                 console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
             }, function (err) {
                 console.log("FAILED. error=", err);
-            })
+            }).then($('#contact-form').each(function () {
+                this.reset();
+            }));
 
         return false;
     });
